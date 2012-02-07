@@ -23,13 +23,13 @@ module Segmentation
   
   # Segment helpers.
   def in_zdus?
-    (not in_subunion? and not in_union?)
+    false #(not in_subunion? and not in_union?)
   end
   def in_union?
-    (not params[:union_id].nil?)
+    true #(not params[:union_id].nil?)
   end
   def in_subunion?
-    (not params[:subunion_id].nil?)
+    false #(not params[:subunion_id].nil?)
   end
   
 	# Return segment

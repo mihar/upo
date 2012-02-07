@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   include AuthenticationSystem, LinkHelpers, Segmentation, ExceptionLoggable, CounterSystem
 
   # Get menu categories
-  before_filter :get_menu_categories, :get_union_data
+  before_filter :get_menu_categories, :get_union_data, :count_visit
   
   # Initiate admin determinator helpers.
   helper_method :admin?, :admin_u?, :admin_union?, :admin_subu?, :admin_zdus?, :admin_tecum?, :in_zdus?, :in_union?, :in_subunion?

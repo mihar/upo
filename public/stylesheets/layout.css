@@ -767,6 +767,8 @@ body {
   width: 200px; }
   #cntMenu #calendar {
     margin-left: 10px; }
+  #cntMenu #counter {
+    margin: 10px; }
   #cntMenu ul li {
     list-style: none;
     position: relative; }

@@ -21,7 +21,7 @@ class Counter < ActiveRecord::Base
   
   # Counter incrementings
   def self.increment_for_union(union_id)
-    c = find_for_union :first, union_id
+    c = find_by_union_id union_id
     c.count += 1
     c.save
   end

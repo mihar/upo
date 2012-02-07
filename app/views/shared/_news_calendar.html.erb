@@ -10,19 +10,9 @@
 	next_cal_date = cal_date.next_month
 	prev_cal_date = cal_date.last_month
 	
-	if in_zdus?
-  	all_resource = Resource.find :all, :conditions => [	'created_at between ? and ?',
-  											cal_date.beginning_of_month.beginning_of_day,
-  											cal_date.end_of_month.end_of_day ]
-  elsif in_union?
-  	all_resource = News.find_for_union :all, @union.id, :conditions => [	'created_at between ? and ?',
-  											cal_date.beginning_of_month.beginning_of_day,
-  											cal_date.end_of_month.end_of_day ]
-  elsif in_subunion?
-    all_resource = News.find_for_subunion :all, params[:subunion_id], :conditions => [	'created_at between ? and ?',
-  											cal_date.beginning_of_month.beginning_of_day,
-  											cal_date.end_of_month.end_of_day ]
-  end
+	all_resource = News.find_for_union :all, @union.id, :conditions => [	'created_at between ? and ?',
+											cal_date.beginning_of_month.beginning_of_day,
+											cal_date.end_of_month.end_of_day ]
 	
 	calendar  :year => cal_date.year, 
 	          :month => cal_date.month,
@@ -37,8 +27,7 @@
 		cal_dates_resource = all_resource.find { |resource| resource.created_at.to_date == d }
 		
 		if !cal_dates_resource.blank?
-			path = (in_zdus?) ? cat_archive_path(nil) : normal_link('news')
-			cell_text = link_to d.mday.to_s, (path + "?day=" + d.day.to_s + "&month=" + d.month.to_s + "&year=" + d.year.to_s)
+			cell_text = link_to d.mday.to_s, u_news_archive_path(:day => d.day, :month => d.month, :year => d.year)
 		else
 			cell_text = "<span>#{d.mday}</span>"
 		end
