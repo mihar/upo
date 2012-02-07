@@ -66,7 +66,15 @@ class Union < ActiveRecord::Base
         "normal" => "400x300>",
         "thumb" => "100x100>"
       }}
-	    
+
+	# Image in header
+	file_column :header, 
+      :magick => {
+        :versions => {
+        "thumb" => "100x100>",
+        "proper" => "950x180>"
+      }}
+
 	def description_formatted
 	  RedCloth.new(self.description).to_html unless self.description.nil?
 	end

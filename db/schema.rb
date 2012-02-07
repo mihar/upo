@@ -9,33 +9,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090419232650) do
-
-  create_table "abouts", :force => true do |t|
-    t.text   "about"
-    t.string "image"
-    t.text   "summary"
-  end
+ActiveRecord::Schema.define(:version => 20120207191849) do
 
   create_table "activities", :force => true do |t|
     t.text    "activities"
     t.integer "union_id"
     t.integer "subunion_id"
-  end
-
-  create_table "actualities", :force => true do |t|
-    t.string  "title"
-    t.date    "date"
-    t.text    "text"
-    t.string  "image"
-    t.boolean "show_zdus"
-    t.boolean "show_pz"
-    t.boolean "show_du"
-    t.date    "show_from"
-    t.date    "show_until"
-    t.integer "union_id"
-    t.integer "subunion_id"
-    t.text    "summary"
   end
 
   create_table "admins", :force => true do |t|
@@ -80,6 +59,22 @@ ActiveRecord::Schema.define(:version => 20090419232650) do
     t.text    "description"
   end
 
+  create_table "doc_categories", :force => true do |t|
+    t.string   "title"
+    t.integer  "position",   :default => 0
+    t.integer  "docs_count", :default => 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "docs", :force => true do |t|
+    t.string   "title"
+    t.string   "file"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "doc_category_id"
+  end
+
   create_table "forms", :force => true do |t|
     t.string "title"
     t.string "file"
@@ -111,16 +106,6 @@ ActiveRecord::Schema.define(:version => 20090419232650) do
     t.string "url"
   end
 
-  create_table "izdelas", :force => true do |t|
-    t.string   "title"
-    t.datetime "created_at"
-    t.text     "summary"
-    t.text     "text"
-    t.string   "image"
-    t.integer  "union_id"
-    t.integer  "subunion_id"
-  end
-
   create_table "links", :force => true do |t|
     t.string  "title"
     t.string  "description"
@@ -139,6 +124,12 @@ ActiveRecord::Schema.define(:version => 20090419232650) do
     t.text     "environment"
     t.text     "request"
     t.datetime "created_at"
+  end
+
+  create_table "memberships", :force => true do |t|
+    t.text    "membership"
+    t.integer "union_id"
+    t.integer "subunion_id"
   end
 
   create_table "news", :force => true do |t|
@@ -163,11 +154,8 @@ ActiveRecord::Schema.define(:version => 20090419232650) do
     t.string   "fileimage"
     t.string   "filedata"
     t.integer  "news_id"
-    t.integer  "actuality_id"
-    t.integer  "public_relation_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "izdela_id"
   end
 
   create_table "organizations", :force => true do |t|
@@ -228,17 +216,6 @@ ActiveRecord::Schema.define(:version => 20090419232650) do
     t.datetime "updated_at"
     t.integer  "position",   :default => 0
     t.integer  "union_id"
-  end
-
-  create_table "public_relations", :force => true do |t|
-    t.string  "title"
-    t.date    "created_at"
-    t.text    "statement"
-    t.string  "author"
-    t.integer "union_id",    :default => 0
-    t.integer "subunion_id", :default => 0
-    t.text    "summary"
-    t.string  "image"
   end
 
   create_table "recreations", :force => true do |t|
@@ -366,6 +343,7 @@ ActiveRecord::Schema.define(:version => 20090419232650) do
     t.string  "title_websafe"
     t.string  "email_contact"
     t.string  "email_contact_copy"
+    t.string  "header"
   end
 
   create_table "universities", :force => true do |t|

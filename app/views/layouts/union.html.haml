@@ -12,7 +12,7 @@
 
   %body
     = render :partial => "layouts/top_info"
-    #cntHead
+    #cntHead{head_bkg}
       %a{ :name => "top" }
       - unless admin_union?
         = link_to "", adminlogin_path, :id => 'blkAdminGate'

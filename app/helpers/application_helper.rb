@@ -2,6 +2,14 @@ module ApplicationHelper
 
   include SegmentationHelpers, AdminHelpers, LanguageHelpers, LinkHelpers
 
+  def head_bkg
+    if @union and @union.header
+      {:style => "background: url('#{url_for_file_column(@union, "header", "proper")}') no-repeat"}
+    else
+      {:style => "background: url('/images/union_sctHead_head.png') no-repeat"}
+    end
+  end
+
 	def signal_active(what)
 		' id="active"' if @section == what
 	end
@@ -16,7 +24,7 @@ module ApplicationHelper
 		when 3..4
 			"Obiskali so nas #{@counter.count} obiskovalci."
 		else
-			"Obiskalo nas je #{@counter.count} obiskovalcev."			
+			"Obiskalo nas je #{@counter.count} obiskovalcev."
 		end
   end
 	
