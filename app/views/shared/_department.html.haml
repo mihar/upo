@@ -1,0 +1,9 @@
+.blkOrgan
+  %h2
+    = department.title
+    - admin_section do
+      = link_to "Uredi organ", admin_link('departments', {:action => 'edit', :id => department})
+  %p.description= department.description
+  .attachments= render :partial => 'attachment', :collection => department.resource_attachments
+
+  = render :partial => "shared/person", :collection => department.people

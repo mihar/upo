@@ -1,0 +1,29 @@
+
+- @lightbox = true
+= title @resource.title
+
+- admin_section do
+  = link_to "Uredi", admin_res_path(:action => 'edit', :id => @resource)
+  |
+  = link_to "Izbriši", admin_res_path(:action => 'destroy', :id => @resource), :confirm => del_conf_msg(@resource.title)
+
+.resource_read
+  %p.author= @resource.author
+  %p.date= @resource.created_at.to_s(:long)
+  - unless @resource.photo.nil?
+    %p.image= image_tag url_for_file_column(@resource.photo, 'fileimage', 'thumb')
+  %p.text= @resource.text
+  %br.clear
+  
+  
+- unless @resource.resource_attachments.empty?
+  %h2 Priponke
+  %div.attachments= render :partial => 'attachment', :collection => @resource.resource_attachments, :locals => {:segment => 'resource', :id => @resource}
+- if admin?
+  .attachment_admin
+    %h4= "Dodaj priponke za &raquo;#{@resource.title}&laquo;"
+    = render :partial => 'admin_resource_attachment/add_attachment_links', :locals => {:segment => 'resource_category', :id => @category} 
+
+
+%p.back
+  = link_to_res_back @resource

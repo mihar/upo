@@ -1,0 +1,25 @@
+%ul#menu
+  %li
+    = link_to "O nas", normal_link('about')
+    %ul
+      %li= link_to "O nas", normal_link('about')
+      %li= link_to "Kontakt", normal_link('contact')
+      %li= link_to "Organiziranost in organi", normal_link('organization')
+      %li= link_to "Vodstvo", normal_link('departments')
+      %li= link_to "Področja delovanja", normal_link('activities')
+      %li= link_to "Projekti", normal_link('projects')
+      %li= link_to "Komisije / Sekcije", normal_link('subsections')
+      %li= link_to "Simboli", normal_link('symbols')
+
+  %li= link_to "Fotogalerija", normal_link('gallery')
+  %li= link_to "Obvestila", u_news_obv_path
+  %li= link_to "Prispevki članov", u_news_pc_path
+  %li= link_to "Arhiv", u_news_archive_path
+  %li= link_to "Koristne povezave", normal_link('links')
+  %li= link_to "ZDUS", "http://zdus-zveza.si"
+  - if admin? && session[:admin_id] == 4
+    %li.admin
+      = link_to "Administracija Tecum"
+      %ul
+        %li= link_to "Uporabniki", admin_tecum_admins_path
+        %li= link_to "Drustva", admin_tecum_unions_path

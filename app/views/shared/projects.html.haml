@@ -1,0 +1,6 @@
+= title 'Projekti'
+
+- admin_section do
+  = link_to 'Dodaj projekt', admin_u_projects_path(:action => 'new')
+
+= render :partial => 'project', :collection => @projects

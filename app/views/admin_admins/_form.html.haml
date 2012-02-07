@@ -1,0 +1,30 @@
+= error_messages_for 'admin'
+
+
+%p
+  %label{ :for => "admin_name" } Ime
+  = text_field 'admin', 'name'
+%p
+  %label{ :for => "admin_surname" } Priimek
+  = text_field 'admin', 'surname'
+%p
+  %label{ :for => "admin_username" } Uporabniško ime
+  = text_field 'admin', 'username'
+%p
+  %label{ :for => "admin_password" } Geslo
+  = password_field 'admin', 'password'
+%p
+  %label{ :for => "admin_email" } E-pošta
+  = text_field 'admin', 'email'
+%p
+  %label{ :for => "admin_haxor" } Osebje Tecum
+  = select("admin", "haxor", @options)
+%p
+  %label{ :for => "admin_zdus" } Urednik ZDUS
+  = select("admin", "zdus", @options)
+%p
+  %label{ :for => "admin_subunion_id" } Urednik pokrajinske zveze
+  = collection_select 'admin', 'subunion_id', @subunions, :id, :title, :prompt => "Ne"
+%p
+  %label{ :for => "admin_union_id" } Urednik društva
+  = collection_select 'admin', 'union_id', @unions, :id, :title, :prompt => "Ne"

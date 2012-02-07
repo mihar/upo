@@ -1,0 +1,18 @@
+= error_messages_for 'link'
+
+
+%p
+  %label{ :for => "link_title" } Naziv povezave
+  = text_field 'link', 'title'
+%p
+  %label{ :for => "link_description" } Opis
+  = text_field 'link', 'description'
+%p
+  %label{ :for => "link_url" } Spletni naslov (URL)
+  = text_field 'link', 'url'
+%p
+  %label{ :for => "link_position" } Pozicija
+  = text_field 'link', 'position'
+
+
+= segment_id_field 'link'

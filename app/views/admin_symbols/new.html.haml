@@ -1,0 +1,8 @@
+%h1 Dodajanje novega simbola
+
+- form_tag( {:action => 'create'}, {:multipart => true, :class => 'nice'} ) do
+  = render :partial => 'form'
+  = nice_submit_tag
+
+
+%p.admin_controls= link_to_back normal_link('symbols')

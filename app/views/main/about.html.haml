@@ -1,0 +1,10 @@
+= title 'Pod žarometi'
+
+- admin_section do
+  = link_to "Uredi kratko predstavitev", admin_link('information')
+
+- unless @information.image.nil?
+  %p= image_tag url_for_file_column(@information, "image", "normal")
+
+%p= @information.about
+

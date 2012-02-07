@@ -1,0 +1,42 @@
+!!! strict
+%html{ :lang => "sl" }
+  %head
+    %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "Content-Type" }
+    %title
+      - if @page_title
+        = "#{@page_title} (#{@union.title if @union})"
+      - elsif @union
+        = @union.title
+
+    = render :partial => 'layouts/common_includes'
+
+  %body
+    = render :partial => "layouts/top_info"
+    #cntHead
+      %a{ :name => "top" }
+      - unless admin_union?
+        = link_to "", adminlogin_path, :id => 'blkAdminGate'
+        
+      %h1.union
+        - if @union
+          = link_to @union.title, u_index_path
+      = render :partial => "shared/horizontalMenu"
+
+      = render :partial => "layouts/adminMenu"
+
+
+    #bodyWrapper
+      #cntMenu
+        = render :partial => "shared/layoutMenu"
+      %hr
+
+      .cntBody
+        = yield
+
+      /#cntSide
+      /  = render :partial => "layouts/layoutSidebar"
+      %br.clear
+
+    %hr
+
+    = render :partial => "layouts/foot"

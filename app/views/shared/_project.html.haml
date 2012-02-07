@@ -1,0 +1,15 @@
+.resource
+  %h3
+    = project.title
+    - admin_section do
+      = link_to "Uredi vir", admin_u_projects_path(:action => 'edit', :id => project)
+
+  %p.date= project.created_at.to_s(:long)
+  
+  - unless project.photo.nil?
+    %p.image= image_tag url_for_file_column(project.photo, 'fileimage', 'small')
+    
+  %p.summary
+    = project.summary
+    = link_to_more u_project_path(project), project.manager, project.resource_attachments
+    %br.clear

@@ -1,0 +1,15 @@
+﻿
+- @page_title = "Arhiv"
+%h1
+  Arhiv
+  - if @category
+    =  "- ", @category.title
+
+- form_tag cat_archive_path, :method => :get, :class => 'date_limiter' do
+  %label Od:
+  = date_select 'time_filter', 'from'
+  %label Do:
+  = date_select 'time_filter', 'to'
+  = submit_tag "Filtriraj"
+
+= render :partial => 'resource', :collection => @resources

@@ -1,0 +1,17 @@
+%h1 Nova datoteka
+
+- form_tag({:action => 'create'}, {:multipart => true, :class => 'nice'}) do
+  = error_messages_for 'news_file'
+
+  %p.file
+    %label{ :for => "news_fileimage" } Datoteka (DOC, PDF, XLS, ...)
+    = file_column_field 'news_file', 'filedata'
+
+  = hidden_field 'news_file', 'news_id'
+
+  = segment_id_field(@news)  
+  = nice_submit_tag
+
+
+%p.admin_controls= link_to_back admin_link('news', {:action => 'edit', :id => @news})
+

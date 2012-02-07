@@ -1,0 +1,14 @@
+= error_messages_for 'category'
+
+
+%p
+  %label{ :for => "category_title" } Naziv kategorije
+  = text_field 'category', 'title'
+
+%p
+  %label{ :for => "category_standalone" } Samozadostna kategorija?
+  = select("category", "standalone", {'Ne' => false, 'Da' => true})
+  
+/ %p
+/   %label{ :for => "category_position" } Pozicija
+/   = text_field 'category', 'position'

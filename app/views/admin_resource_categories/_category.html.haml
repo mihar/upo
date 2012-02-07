@@ -1,0 +1,4 @@
+%li[category]
+  = category.title, " <em>(#{category.resources.size} člankov)</em>"
+  - admin_section do
+    = link_to "Uredi", admin_tecum_resource_categories_path(:action => "edit", :id => category)

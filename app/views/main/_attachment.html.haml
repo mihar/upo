@@ -1,0 +1,23 @@
+.file
+  - unless attachment.fileimage.nil?
+    %p{:class => "file_#{kind_from_extension(file_extension( attachment.fileimage ))}"}
+      = link_to attachment.title_or_filename, url_for_file_column(attachment, 'fileimage', 'medium'), :rel => 'lightbox', :title => attachment.title_or_filename
+      = attachment.summary
+  - unless attachment.filedata.nil?
+    %p{:class => "file_#{kind_from_extension(file_extension( attachment.filedata ))}"}
+      = link_to attachment.title_or_filename, url_for_file_column(attachment, 'filedata'), :class => 'file_download'    
+      = attachment.summary
+  - unless attachment.link.nil?
+    %p.file_link
+      = link_to attachment.title_or_filename, attachment.link
+      = attachment.summary
+  - unless attachment.google_video.nil?
+    %p.file_mov
+      = link_to attachment.title, attachment.google_video
+      = attachment.summary
+  
+
+  - admin_section do
+    = link_to 'Uredi', admin_link('resource_attachment', {:action => "edit", :id => attachment}.merge(keypair(segment, id)))
+    |
+    = link_to 'Izbriši', admin_link('resource_attachment', {:action => "destroy", :id => attachment}), :confirm => del_conf_msg(attachment.title_or_filename)

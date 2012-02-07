@@ -1,0 +1,44 @@
+.file {
+  position: relative; }
+  .file .admin {
+    position: absolute;
+    top: 5px;
+    right: 5px; }
+
+.file_archive a, .file_excel a, .file_file a, .file_img a, .file_mov a, .file_pdf a, .file_powerpoint a, .file_word a, .file_link a {
+  background-repeat: no-repeat;
+  padding-left: 20px; }
+
+.file_archive a {
+  background-image: url(../images/fileicons/typeicon_archive.gif); }
+
+.file_excel a {
+  background-image: url(../images/fileicons/typeicon_excel.gif); }
+
+.file_file a {
+  background-image: url(../images/fileicons/typeicon_file.gif); }
+
+.file_img a {
+  background-image: url(../images/fileicons/typeicon_img.gif); }
+
+.file_mov a {
+  background-image: url(../images/fileicons/typeicon_mov.gif); }
+
+.file_pdf a {
+  background-image: url(../images/fileicons/typeicon_pdf.gif); }
+
+.file_powerpoint a {
+  background-image: url(../images/fileicons/typeicon_powerpoint.gif); }
+
+.file_word a {
+  background-image: url(../images/fileicons/typeicon_word.gif); }
+
+.file_link a {
+  background-image: url(../images/fileicons/typeicon_link.gif); }
+
+.cntBody ul.add_attachment li {
+  padding: 2px 0;
+  list-style: none;
+  height: 16px; }
+  .cntBody ul.add_attachment li a {
+    line-height: 16px; }

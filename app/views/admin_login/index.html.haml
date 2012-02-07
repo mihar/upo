@@ -1,0 +1,11 @@
+- form_tag :action => "index" do
+  %p.nice
+    %label{ :for => "username" } Uporabniško ime
+    = text_field_tag "username", params[:username]
+    %br
+    
+    %label{ :for => "password" } Geslo
+    = password_field_tag "password", params[:password]
+    %br
+    
+  %p.submit= submit_tag "Prijava"

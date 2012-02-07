@@ -1,0 +1,51 @@
+<div id="calendar">
+<%=
+  # Set date to current or from parameters.
+	if params[:cal_year] and params[:cal_month]
+    cal_date = Date.new(params[:cal_year].to_i, params[:cal_month].to_i, 1)
+  else
+    cal_date = Date.today
+  end
+  # Set next and previous month.
+	next_cal_date = cal_date.next_month
+	prev_cal_date = cal_date.last_month
+	
+	if in_zdus?
+  	all_resource = Resource.find :all, :conditions => [	'created_at between ? and ?',
+  											cal_date.beginning_of_month.beginning_of_day,
+  											cal_date.end_of_month.end_of_day ]
+  elsif in_union?
+  	all_resource = News.find_for_union :all, @union.id, :conditions => [	'created_at between ? and ?',
+  											cal_date.beginning_of_month.beginning_of_day,
+  											cal_date.end_of_month.end_of_day ]
+  elsif in_subunion?
+    all_resource = News.find_for_subunion :all, params[:subunion_id], :conditions => [	'created_at between ? and ?',
+  											cal_date.beginning_of_month.beginning_of_day,
+  											cal_date.end_of_month.end_of_day ]
+  end
+	
+	calendar  :year => cal_date.year, 
+	          :month => cal_date.month,
+        		:first_day_of_week => 1, 
+        		:previous_month_text => 
+        		link_to(image_tag('larr.png'),
+        		 "?cal_month=#{prev_cal_date.month.to_s}&cal_year=#{prev_cal_date.year.to_s}"),
+        		:next_month_text => 
+        		link_to(image_tag('rarr.png'),
+        		 "?cal_month=#{next_cal_date.month.to_s}&cal_year=#{next_cal_date.year.to_s}") do |d|
+		
+		cal_dates_resource = all_resource.find { |resource| resource.created_at.to_date == d }
+		
+		if !cal_dates_resource.blank?
+			path = (in_zdus?) ? cat_archive_path(nil) : normal_link('news')
+			cell_text = link_to d.mday.to_s, (path + "?day=" + d.day.to_s + "&month=" + d.month.to_s + "&year=" + d.year.to_s)
+		else
+			cell_text = "<span>#{d.mday}</span>"
+		end
+		
+		cell_attrs = {:class => "wild_#{cal_dates_resource.blank?}", :id => "day_#{d}"}
+
+		[cell_text, cell_attrs]
+	end
+%>
+</div>

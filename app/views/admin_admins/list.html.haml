@@ -1,0 +1,28 @@
+%h1 Administratorji
+
+- admin_section do
+  = link_to 'Nov administrator', admin_tecum_admins_path(:action => 'new')
+
+
+%table.nice_listing{ :cellspacing => "0", :cellpadding => "0" }
+  %tr
+    %th
+      Ime
+    %th
+      Priimek
+    %th
+      E-pošta
+    %th
+      Upor. ime
+    %th
+      Tecum
+    %th
+      Urednik ZDUS
+    %th
+      Urednik PZ
+    %th
+      Uredni DU
+  = render :partial => 'admin', :collection => @admins
+
+
+= will_paginate @admins

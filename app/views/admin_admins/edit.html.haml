@@ -1,0 +1,12 @@
+%h1 Urejanje administratorja
+
+
+- form_tag( {:action => 'update', :id => @admin}, {:class => 'nice'} ) do
+  = render :partial => 'form'
+  = nice_submit_tag
+  
+  
+%p.admin_controls
+  = link_to 'Izbriši administratorja', admin_tecum_admins_path(:action => 'destroy', :id => @admin), :confirm => del_conf_msg(@admin.name_and_surname)
+  |
+  = link_to 'Nazaj', admin_tecum_admins_path

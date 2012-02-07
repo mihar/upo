@@ -1,0 +1,82 @@
+// ZDUS section color scheme
+
+!dark_gold = #875a1d
+!background = #875a1d
+
+
+
+#cntTop,  #cntTop a
+  :color #f2e5c5
+
+
+#cntHead
+  h1
+    a
+      :border-bottom 1px solid
+        :color = !dark_gold
+      :background #f2e5c5 url(../images/sctHead_head.png) left top no-repeat
+
+  p
+    :background url(../images/sctHead_hMenuBkg.gif)
+
+    a
+      :color #3d2b13
+
+
+body
+  :background url(../images/bkgGradient.gif) repeat-x
+    :color = !background
+
+
+#bodyWrapper
+  :background #fff url(../images/cntBody_fauxColBkg.gif) repeat-y
+
+
+#cntMenu
+  :background #f2e5c5
+  ul li
+    a
+      :background url(../images/sctHead_hMenuBkg.gif)
+      :color #3d2b13
+
+
+
+
+.cntBody
+  a
+    :color #751017
+
+    &:hover
+      :color #A1161F
+
+
+#cntSide
+  :background #f2e5c5
+
+
+#cntFoot
+  :color #f2e5c5
+
+
+// Calendar
+#calendar
+  table
+    :border-color = !dark_gold
+    thead
+      :background-color = !dark_gold
+      :color #fff
+  .today
+    :background #CDC2A7
+  .otherMonth
+    :color #ccc
+
+
+
+//
+//  **************************************************************
+//  PAGE STYLES
+//  **************************************************************
+
+.resource
+  :border-bottom-color = !dark_gold
+  

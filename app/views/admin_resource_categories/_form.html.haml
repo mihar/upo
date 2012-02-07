@@ -1,0 +1,24 @@
+= error_messages_for 'resource_category'
+
+- @tinymce = true
+
+
+%p
+  %label{ :for => "resource_category_menu_title" } Kratek naziv 
+  = text_field 'resource_category', 'menu_title'
+
+%p
+  %label{ :for => "resource_category_title" } Naziv
+  = text_field 'resource_category', 'title'
+
+%p
+  %label{ :for => "resource_category_category_id" } Kategorija
+  = collection_select 'resource_category', 'category_id', @categories, :id, :title, :include_blank => true  
+
+%p
+  %label{ :for => "resource_category_description" } Opis
+  = text_area 'resource_category', 'description', :class => 'gui'
+
+/ %p
+/   %label{ :for => "resource_category_position" } Pozicija
+/   = text_field 'resource_category', 'position'

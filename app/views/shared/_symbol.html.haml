@@ -1,0 +1,13 @@
+.blkSymbol
+  %h2
+    = symbol.title
+    - admin_section do
+      = link_to "Uredi simbol", admin_link('symbols', {:action => 'edit', :id => symbol})
+
+  - unless symbol.nil?
+    %p
+      - unless symbol.image.nil?
+        = image_tag url_for_file_column(symbol, "image", "thumb")
+      = symbol.description
+
+  %br.clear

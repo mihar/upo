@@ -1,0 +1,7 @@
+
+- @lightbox = true
+= title "Vodstvo"
+- admin_section do
+  = link_to "Dodaj nov organ", admin_link('departments', {:action => 'new'})
+
+= render :partial => 'department', :collection => @departments

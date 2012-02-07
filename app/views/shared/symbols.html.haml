@@ -1,0 +1,8 @@
+- @lightbox = true
+
+= title "Simboli"
+
+- admin_section do
+  = link_to "Dodaj nov simbol", admin_link('symbols', {:action => 'new'})
+
+= render :partial => "shared/symbol", :collection => @symbolics

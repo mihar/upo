@@ -1,0 +1,4 @@
+%li
+  = link_to subunion.title#, subunion_friendly_path(subunion.title_websafe)
+  - admin_section do
+    = link_to "Izbriši zvezo", admin_tecum_subunions_path('destroy', subunion), :confirm => del_conf_msg(subunion.title)

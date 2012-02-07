@@ -1,0 +1,25 @@
+
+= error_messages_for 'news'
+- @tinymce = true
+
+%p
+  %label{ :for => "news_title" } Naslov
+  = text_field 'news', 'title'
+
+%p.datetime
+  %label{ :for => "news_created_at" } Datum
+  %span= datetime_select 'news', 'created_at'
+
+%p.summary
+  %label{ :for => "news_summary" } Povzetek
+  = text_area 'news', 'summary'
+
+%p
+  %label{ :for => "news_text" } Besedilo
+  = text_area 'news', 'text', :class => 'gui'
+  
+%p
+  %label{ :for => "news_text" } Kategorija
+  = select 'news', 'news_type', @options
+
+= segment_id_field('news')

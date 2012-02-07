@@ -1,0 +1,20 @@
+﻿
+= title @subsection.title
+
+- admin_section do
+  = link_to "Uredi sekcijo", admin_link('subsections', {:action => 'edit', :id => @subsection})
+
+%dl.classic
+  %dt Sekcijo vodi
+  %dd= @subsection.manager
+  %dt Sestanki sekcije
+  %dd= @subsection.working_hours
+
+%h2 Opis
+%p= @subsection.description
+
+
+.attachments= render :partial => 'attachment', :collection => @subsection.resource_attachments
+
+%p.back
+  = link_to :Nazaj, u_subsections_path(:id => nil)

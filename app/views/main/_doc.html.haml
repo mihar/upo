@@ -1,0 +1,6 @@
+%li
+  = link_to doc.title, url_for_file_column(doc, 'file')
+  - admin_section do
+    = link_to 'Uredi', admin_zdus_docs_path(:action => 'edit', :id => doc)
+    |
+    = link_to 'Izbriši', admin_zdus_docs_path(:action => 'destroy', :id => doc), :confirm => del_conf_msg(doc.title)

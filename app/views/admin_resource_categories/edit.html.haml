@@ -1,0 +1,19 @@
+
+- @segment = 'zdus'
+
+%h1 Urejanje podkategorije
+
+- form_tag( {:action => 'update', :id => @resource_category}, {:class => 'nice'} ) do
+  = render :partial => 'form'
+  = nice_submit_tag
+
+
+%h2 Priponke
+= render :partial => 'admin_resource_attachment/add_attachment_links', :locals => {:segment => 'resource_category', :id => @resource_category.id}
+.attachments
+  = render :partial => 'main/attachment', :collection => @resource_category.resource_attachments, :locals => {:segment => 'resource_category', :id => @resource_category.id}
+
+%p.admin_controls
+  = link_to "Izbriši kategorijo", admin_tecum_resource_categories_path(:action => 'destroy', :id => @resource_category), :confirm => del_conf_msg(@resource_category.title)
+  |
+  = link_to_back res_path(@resource_category)

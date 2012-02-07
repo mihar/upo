@@ -1,0 +1,21 @@
+%ul.add_attachment
+  %li
+    = link_to 'Dodaj datoteko', admin_link('resource_attachment', {:action => 'new_file'}.merge(keypair(segment, id))), :class => 'add_file'
+    %span.fileicons
+      = image_tag 'fileicons/typeicon_file.gif'
+      = image_tag 'fileicons/typeicon_word.gif'
+      = image_tag 'fileicons/typeicon_excel.gif'
+      = image_tag 'fileicons/typeicon_powerpoint.gif'
+      = image_tag 'fileicons/typeicon_pdf.gif'
+  %li
+    = link_to 'Dodaj sliko', admin_link('resource_attachment', {:action => 'new_image'}.merge(keypair(segment, id))), :class => 'add_image'
+    %span.fileicons
+      = image_tag 'fileicons/typeicon_img.gif'
+  %li
+    = link_to 'Dodaj film', admin_link('resource_attachment', {:action => 'new_movie'}.merge(keypair(segment, id))), :class => 'add_movie'
+    %span.fileicons
+      = image_tag 'fileicons/typeicon_mov.gif'
+  %li
+    = link_to 'Dodaj povezavo', admin_link('resource_attachment', {:action => 'new_link'}.merge(keypair(segment, id))), :class => 'add_link'
+    %span.fileicons
+      = image_tag 'fileicons/typeicon_link.gif'

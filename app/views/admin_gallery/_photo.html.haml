@@ -1,0 +1,6 @@
+- unless photo.filename.nil?
+  %li.admin
+    = link_to image_tag(url_for_file_column(photo, "filename", "thumb")), normal_link('photo', {:id => photo})
+    = photo.title
+    = link_to "Izbriši", { :action => 'remove_photo', :id => photo.id, :album_id => @album}, :confirm => del_conf_msg(photo.title), :method => 'post', :class => 'admin'
+    = link_to "Uredi sliko", :action => 'edit_photo', :id => photo.id

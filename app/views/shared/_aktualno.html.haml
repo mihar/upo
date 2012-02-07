@@ -1,0 +1,17 @@
+.blkNews
+  %h3
+    = aktualno.title
+    - admin_section do
+      = link_to "Uredi vest", admin_link('aktualno', {:action => 'edit', :id => aktualno})
+
+  %p.date= aktualno.date.to_s(:long)
+
+  - unless aktualno.photo.nil?
+    %p.image= image_tag url_for_file_column(aktualno.photo, "fileimage", "small")
+
+
+  %p.summary
+    = aktualno.summary
+    = link_to_more normal_link('aktualno_read', {:id => aktualno})
+    %br.clear
+

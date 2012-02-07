@@ -1,0 +1,8 @@
+= title "Obrazi ZDUS"
+
+- admin_section do
+  = link_to "Dodaj obrazec ", admin_zdus_forms_path('new')
+
+%ul.obrazci
+  = render :partial => 'form', :collection => @forms
+    

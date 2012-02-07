@@ -1,0 +1,51 @@
+
+= error_messages_for 'union'
+- @tinymce = true
+
+%p
+  %label{ :for => "union_title" } Naziv društva
+  = text_field 'union', 'title'
+
+%p
+  %label{ :for => "union_contact" } Kontaktna oseba
+  = text_field 'union', 'contact'
+%p
+  %label{ :for => "union_working_hours" } Uradne ure
+  = text_field 'union', 'working_hours'
+%p
+  %label{ :for => "union_address" } Naslov
+  = text_field 'union', 'address'
+%p
+  %label{ :for => "union_locality" } Kraj
+  = text_field 'union', 'locality'
+%p
+  %label{ :for => "union_postal_number" } Poštna številka
+  = text_field 'union', 'postal_number'
+%p
+  %label{ :for => "union_telephone" } Telefon
+  = text_field 'union', 'telephone'
+%p
+  %label{ :for => "union_email" } E-pošta
+  = text_field 'union', 'email'
+%p
+  %label{ :for => "union_email_contact" } Kontaktna e-pošta
+  = text_field 'union', 'email_contact'
+%p
+  %label{ :for => "union_email_contact_copy" } Kopija kont. e-pošta
+  = text_field 'union', 'email_contact_copy'
+%p
+  %label{ :for => "union_www" } Spletna stran
+  = text_field 'union', 'www'
+%p.summary
+  %label Povzetek opisa
+  = text_area 'union', 'summary'
+%p
+  %label{ :for => "union_description" } Opis
+  = text_area 'union', 'description', :class => 'gui'
+
+%p.file
+  %label{ :for => "union_logo" } Logotip društva
+  = file_column_field 'union', 'logo'
+%p.file
+  %label{ :for => "union_image" } Fotografija društva
+  = file_column_field 'union', 'image'

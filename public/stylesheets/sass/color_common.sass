@@ -1,0 +1,340 @@
+// Global styles
+body
+  :font-family Verdana, Helvetica, sans-serif
+
+
+// Header
+#cntTop
+  :font bold 11px/11px Arial, Helvetica, sans-serif
+  :text-align right
+  
+  a
+    :text-decoration none
+
+    &:hover
+      :text-decoration underline
+
+#cntHead
+  h1 a
+    :font bold 36px/100px Verdana, Helvetica, sans-serif
+    :letter-spacing -2px
+    :color #fff
+
+  p
+    :text-align left
+
+    a
+      :padding 0 5px
+      :text-decoration none
+      :font bold 13px/35px Verdana, sans-serif
+
+
+// Body
+#bodyWrapper
+  :background #fff url(../images/cntBody_fauxColBkg.gif) repeat-y
+
+.cntBody
+  :background #ffffff
+  :font-family Verdana, Helvetica, sans-serif
+  :font-size 12px
+
+  p
+    :line-height 1.3em
+
+  a
+    :text-decoration none
+    :font-weight bold
+    
+    &:hover
+      :text-decoration underline
+
+  h1
+    :font-family Verdana, Arial, Helvetica, sans-serif
+    :letter-spacing 0px
+    :letter-spacing -1px
+    :font-size 20px
+
+  h2
+    :font-size 16px
+
+  h3
+    :font-size 14px
+
+  h4
+    :font-size 12px
+
+  ul
+    :list-style square
+
+  h2, h3, h4, h5, h6
+    :font-family Verdana, Arial, Helvetica, sans-serif
+    :letter-spacing 0px
+
+  .redCloth
+    ul
+      :list-style square inside
+
+    h2
+      :border-bottom 1px dashed #ccc
+
+  .notice
+    :font-size 16px
+    :background #BA010A
+    :color #fff
+    :padding 10px
+    :text-align center
+    :font-weight bold
+
+
+// Menu
+#cntMenu
+  ul li
+    &.long a
+      :letter-spacing -0.5px
+    a
+      :font bold 13px/35px Verdana
+      :padding 0 10px
+      :text-decoration none
+      &:hover
+        :color #000
+    &.admin
+      a
+        :background url(../images/sctHead_hMenuBkg_admin.png)
+        :color #5E0000
+        &:hover
+          :color #000
+        
+    ul 
+      li
+        a
+          :font normal 12px/20px Verdana
+
+
+// Sidebar
+#cntSide
+
+
+
+// Footer
+#cntFoot 
+  #counter
+    :color #000
+  p
+    &.copyright
+      :font-size 11px
+
+    &.tagline
+      :font bold 11px/11px Arial, Helvetica, sans-serif
+    
+    
+    
+
+// Pagination
+#cntPaginator
+  :background #FFDD5F
+  :border 2px solid #D3AE15
+  :border-width 2px 0 2px 0
+  :font-weight normal
+
+  a
+    &.next
+      :color #000
+      :font-size 13px
+      :line-height 13px
+      :font-weight normal
+
+    &:hover.next
+      :border 0
+      :background #fff
+      :color #000
+      
+    &.prev
+      :color #000
+      :font-size 13px
+      :line-height 13px
+      :font-weight normal
+
+    &:hover.prev
+      :border 0
+      :background #fff
+      :color #000
+      
+  ol
+    :list-style none
+
+    li a:hover
+      :background #751018
+      :color #fff
+      :border 0
+      
+      a
+        :color #000
+        :font-size 13px
+        :line-height 13px
+
+div.cntPaginator
+  :background #FFDD5F
+  :border 2px solid #D3AE15
+  :border-width 2px 0 2px 0
+  :font-weight normal
+  :text-align center
+
+  a:hover
+    :background #ffe585
+    :border-bottom 0
+
+  span.current
+    :background #333
+    :color #fff
+    :font-weight bold
+
+  span.disabled
+    :color #555
+      
+
+
+// Admin global      
+div.admin
+  :background #e0f642 url(../images/gfx_adminStripe.gif) !important
+  :color #000 !important
+
+  a
+    :font bold 12px/20px Arial, sans-serif
+    :text-decoration none
+    :border 0
+    :color #000
+
+    &:hover
+      :color #b71927
+      :border 0
+      :text-decoration none
+
+#cntAdmin
+  :background #222
+  :color #fff
+  :text-align right
+  :font 12px/14px Arial, sans-serif
+
+  strong span
+    :font-weight normal
+
+  a
+    :color #ebcf47
+    :font-weight bold
+    :padding-left 20px
+
+  .flash_notice
+    :color #FFC5BF
+    :font-weight bold
+    :font-size 14px/16px
+    :padding 5px
+    :border 2px solid #BF0B14
+    :border-width 2px 0 2px 0
+    :margin-top 12px
+    :background #490000
+    :text-align center
+
+#blkAdminGate
+  :background transparent
+  &:hover
+    :background #ffff4c url(../images/btn_adminGateway.gif)
+
+.fieldWithErrors
+  :background-color red
+
+
+#errorExplanation
+  :border 2px solid red
+  :background-color #f0f0f0
+
+  h2
+    :text-align left
+    :font-weight bold
+    :font-size 12px
+    :background-color #c00
+    :color #fff
+
+  p
+    :color #333
+
+  ul li
+    :font-size 12px
+    :list-style square
+    
+p.admin_controls
+  :margin-top 20px
+  :padding 5px 7.5px
+  :background #333
+  :color #fff
+  :font-size 12px
+  :text-align right
+
+  a
+    :color #ccc
+    &:hover
+      :color #fff
+      :border-color #fff
+      
+    
+
+// Nice tables, Nice forms
+table.nice_listing
+  :background #fff
+  :margin-top 20px
+
+  th
+    :font-size 10px
+    :text-align left
+    :color #666
+
+  td
+    :font-size 12px
+    :padding 3px 1px
+    :border-bottom 1px solid #eee
+
+    &.yes
+      :background #80FF80
+      :text-align center
+
+    &.no
+      :background #FF8080
+
+table.nice_listing td.no
+  :text-align center
+
+
+form.nice
+  :font-size 12px
+
+  label
+    :margin-right 2.5%
+    :margin-bottom 5px
+
+  p
+    input
+      :border 1px solid #ccc
+      :font normal 12px Arial, Helvetica, sans-serif
+      :padding 2px
+      :margin-bottom 5px
+  
+  p.file input
+    :border 0
+  
+  p.datetime
+    :font-size 9px
+    label
+      :font-size 12px
+
+  p.submit
+    :margin-top 20px
+    :background #eee
+    :border-top 10px dotted #fff
+    :padding 10px
+    :text-align center
+
+  textarea, select
+    :margin-bottom 5px
+    :border 1px solid #ccc
+    :font normal 12px Arial, Helvetica, sans-serif
+    :padding 2px
+    

@@ -1,0 +1,18 @@
+%h1 Urejanje fotografije
+
+
+= error_messages_for 'photo'
+
+
+- form_tag({ :action => 'save_photo', :id => @photo.id }, :multipart => true, :class => 'nice') do
+  %p
+    %label Obstoječa fotografija
+    = image_tag url_for_file_column(@photo, "filename", "thumb")
+
+
+  = render :partial => 'photo_form'
+
+  = nice_submit_tag
+
+
+%p.admin_controls= link_to_back admin_link('gallery', {:action => 'edit_photos', :id => @photo.album})

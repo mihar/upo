@@ -1,0 +1,10 @@
+%h1 Povezave
+
+%p Povezave lahko urejate z vlečenjem.
+
+%ol#links.sortable
+  - @links.each do |l|
+    %li[l]
+      =l.title
+      
+= sortable_element("links", :url => {:action => :update_positions})

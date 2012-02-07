@@ -1,0 +1,7 @@
+%li
+  = link_to union.title, index_path(:subdomain => union.permalink)
+  - admin_section do
+    = link_to "Uredi", admin_u_information_path(:subdomain => union.permalink)
+    |
+    = link_to "Izbrisi", admin_tecum_unions_path(:action => 'destroy', :id => union), :confirm => 'Ste prepricani?'
+    

@@ -1,0 +1,16 @@
+.blkNews
+  %h3
+    = pr.title
+    - admin_section do
+      = link_to "Uredi izjavo", admin_link('zamedije', {:action => 'edit', :id => pr})
+
+  %p.date= pr.author, " &mdash; ", pr.created_at.to_s(:long)
+  
+  - unless pr.photo.nil?
+    %p.image= image_tag url_for_file_column(pr.photo, "fileimage", "small")
+
+    
+  %p.summary
+    = pr.summary
+    = link_to_more normal_link('zamedije_read', {:id => pr})
+    %br.clear

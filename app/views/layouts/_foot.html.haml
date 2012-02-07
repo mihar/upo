@@ -1,0 +1,12 @@
+#cntFoot
+  %p.copyright Vse pravice pridržane &copy; TECUM
+  %p.tagline Ko življenje postane modro in izkušeno
+
+
+- if !production?
+  %button{ :onclick => "show_debug_popup(); return false;" }
+    Show debug popup
+    = debug_popup
+
+- if production?
+  = render :partial => 'layouts/analytics.html'

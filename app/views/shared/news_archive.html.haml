@@ -1,0 +1,11 @@
+﻿
+= title "Arhiv"
+
+- form_tag normal_link('news_archive'), :method => :get, :class => 'date_limiter' do
+  %label Od:
+  = date_select 'time_filter', 'from'
+  %label Do:
+  = date_select 'time_filter', 'to'
+  = submit_tag "Filtriraj"
+
+= render :partial => 'news_page'

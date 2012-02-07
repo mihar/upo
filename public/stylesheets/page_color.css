@@ -1,0 +1,87 @@
+#blkKontakt {
+  list-style: none inside;
+  margin-left: 0; }
+  #blkKontakt span {
+    font-weight: bold; }
+
+p.cntZemljevid img {
+  border: 2px solid #444; }
+
+.blkOrgan h2 {
+  font-size: 14px;
+  line-height: 14px;
+  margin: 0;
+  padding: 0; }
+.blkOrgan .person {
+  background: #efefef;
+  padding: 5px;
+  margin: 10px 0; }
+  .blkOrgan .person p {
+    margin: 0 0;
+    font-size: 12px; }
+  .blkOrgan .person a {
+    font-weight: normal; }
+  .blkOrgan .person strong {
+    color: #333; }
+
+.cntSubunions li a, .cntUnions li a {
+  font-size: 12px; }
+
+.cntSubunions li a:hover, .cntUnions li a:hover {
+  text-decoration: underline;
+  border: 0; }
+
+.album {
+  background: #eee; }
+  .album img {
+    border: 0; }
+  .album .data h2 div.admin a {
+    font-size: 12px; }
+  .album .data h2 a {
+    font-size: 15px; }
+  .album .data .date {
+    font-weight: bold; }
+
+ul#album_photos {
+  list-style: none; }
+  ul#album_photos li {
+    background: #eee;
+    border: 1px solid #ccc;
+    text-align: center;
+    font-size: 13px; }
+    ul#album_photos li a:hover {
+      border-bottom: 0; }
+
+p.sctAlbumDatum {
+  color: #666;
+  font-weight: bold; }
+
+
+p.sctPhotoImage a:hover {
+  border-bottom: 5px solid #78C241; }
+p.sctPhotoImage a img {
+  border: 5px solid #222; }
+
+p.sctPhotoDescription {
+  border-left: 5px solid #efefef; }
+
+.link {
+  border-bottom: 1px solid #eee;
+  margin: 0 15px;
+  position: relative; }
+  .link .link_link {
+    display: block; }
+  .link h2 {
+    font-size: 16px;
+    padding-bottom: 0; }
+  .link div.admin {
+    position: absolute;
+    bottom: 5px;
+    right: 5px; }
+
+.blkSymbol {
+  border-bottom: 1px solid #eee; }
+  .blkSymbol img {
+    border: 2px solid #efefef; }
+  .blkSymbol h2 div.admin {
+    display: inline; }

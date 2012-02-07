@@ -1,0 +1,29 @@
+!!!
+%html{ :lang => "sl" }
+  %head
+    %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "Content-Type" }
+    %title Administrativni vmesnik ZDUS
+    = stylesheet_link_tag 'login', :media => 'screen'
+  %body
+    #wrappah
+      
+      #container_head
+        %h1 Administrativni vmesnik ZDUS
+        %h2 Dostop omejen, zloraba kazniva. Vsa aktivnost se beleži.
+      %hr
+      
+      #content
+        - if flash[:notice]
+          .notice= flash[:notice]
+        = yield :layout
+      %hr
+
+      #container_foot
+        %dl
+          %dt.copyright Pravice pridržane
+          %dd.copyright &copy; Zavod Tecum
+          %dt.email E-pošta
+          %dd.email 
+            %a{ :href => "mailto:info@tecum.si" } info@tecum.si
+          %dt.telefon Telefon
+          %dd.telefon +386 (0)3 897 01 22

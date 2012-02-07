@@ -1,0 +1,8 @@
+﻿
+= title "Organiziranost"
+- admin_section do
+  = link_to "Uredi organiziranost", admin_link('organization')
+
+- unless @organization.nil?
+  .redCloth= @organization.organization
+  .attachments= render :partial => 'attachment', :collection => @organization.resource_attachments

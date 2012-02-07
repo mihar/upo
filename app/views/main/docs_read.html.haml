@@ -1,0 +1,7 @@
+= title "Dokumenti - #{@category.title}"
+
+- admin_section do
+  = link_to "Dodaj dokument", admin_zdus_docs_path('new', :doc_category_id => @category.id)
+
+%ul.docs
+= render :partial => 'doc', :collection => @docs

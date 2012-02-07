@@ -1,0 +1,24 @@
+= error_messages_for 'project'
+
+- @tinymce = true
+
+%p
+  %label{ :for => "project_title" } Naziv
+  = text_field 'project', 'title'
+%p
+  %label{ :for => "project_manager" } Vodja oz. zapisal
+  = text_field 'project', 'manager'
+%p.datetime
+  %label{ :for => "project_manager" } Datum
+  %span= datetime_select 'project', 'created_at'
+%p.summary
+  %label{ :for => "project_summary" } Povzetek
+  = text_area 'project', 'summary'
+%p
+  %label{ :for => "project_text" } Opis
+  = text_area 'project', 'text', :class => 'gui'
+%p
+  %label{ :for => "project_position" } Pozicija
+  = text_field 'project', 'position'
+
+= segment_id_field :project

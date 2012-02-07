@@ -1,0 +1,10 @@
+%h1 Nov projekt
+
+
+- form_tag({:action => 'create'}, {:class => 'nice'}) do
+  = render :partial => 'form'
+  = nice_submit_tag
+
+
+
+%p.admin_controls= link_to_back u_projects_path

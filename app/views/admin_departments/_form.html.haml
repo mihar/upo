@@ -1,0 +1,17 @@
+= error_messages_for 'department'
+- @tinymce = true
+
+%p
+  %label{ :for => "department_title" } Naziv organa
+  = text_field 'department', 'title'
+
+%p
+  %label{ :for => "department_description" } Opis organa (kaj dela)
+  = text_area 'department', 'description', :class => 'gui'
+
+%p
+  %label{ :for => "department_position" } Pozicija organa
+  = text_field 'department', 'position'
+
+
+= segment_id_field 'department'

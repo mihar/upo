@@ -1,0 +1,14 @@
+- if admin? or admin_union? or admin_subu? or admin_zdus?
+  #cntAdmin
+    %strong
+      = admin_name
+      %span 
+        &mdash; prijavljen kot administrator
+        - if admin_union?
+          društva.
+        - elsif admin_subu?
+          pokrajinske zveze.
+        - elsif admin_zdus?
+          ZDUS.
+    = link_to "Odjava", adminlogout_path
+    = content_tag(:div, flash[:notice], :class => 'flash_notice') unless flash[:notice].nil?

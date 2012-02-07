@@ -1,0 +1,28 @@
+%h1.new_attachment 
+  %span.title Nova datoteka
+  %span.fileicons
+    = image_tag 'fileicons/typeicon_file.gif'
+    = image_tag 'fileicons/typeicon_word.gif'
+    = image_tag 'fileicons/typeicon_excel.gif'
+    = image_tag 'fileicons/typeicon_powerpoint.gif'
+    = image_tag 'fileicons/typeicon_pdf.gif'
+  %br.clear
+
+- form_tag({:action => 'create'}, {:multipart => true, :class => 'nice'}) do
+  = error_messages_for 'attachment'
+
+  %p
+    %label{ :for => "attachment_title" } Naslov datoteke
+    = text_field 'attachment', 'title'
+  %p.summary
+    %label{ :for => "attachment_summary" } Opis datoteke
+    = text_area 'attachment', 'summary'
+  %p.file
+    %label{ :for => "attachmentimage" } Datoteka (DOC, PDF, XLS, ...)
+    = file_column_field 'attachment', 'filedata'
+
+  = render :partial => 'id_fields'
+    
+  = nice_submit_tag
+
+= render :partial => 'admin_controls'

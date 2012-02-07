@@ -1,0 +1,43 @@
+%ul#blkKontakt
+  %li 
+    %span Naslov:
+    = @information.title, ", "
+    = @information.address, ", "
+    = @information.post_id
+    = @information.post
+  %li
+    %span Uradne ure:
+    = @information.office_hours
+  %li
+    %span Telefon:
+    = @information.phone
+  
+  - unless @information.fax.blank?
+    %li
+      %span Faks:
+      = @information.fax
+
+  - unless @information.email.blank?
+    %li
+      %span Elektronski naslov:
+      = link_to @information.email, "mailto:#{@information.email}"
+
+  - unless @information.web.blank?
+    %li
+      %span Spletna stran:
+      = link_to @information.web, uri_normalize(@information.web)
+
+  - unless @information.vatid.blank?
+    %li
+      %span Davčna številka:
+      = @information.vatid
+  
+  - unless @information.maticna_stevilka.blank?
+    %li
+      %span Matična številka:
+      = @information.maticna_stevilka
+      
+  - unless @information.trr.blank?
+    %li
+      %span Transakcijski račun:
+      = @information.trr

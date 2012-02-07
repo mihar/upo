@@ -1,0 +1,48 @@
+#cntTop, #cntTop a {
+  color: #f2e5c5; }
+
+#cntHead h1 a {
+  border-bottom: 1px solid;
+  border-bottom-color: #875a1d;
+  background: #f2e5c5 url(../images/sctHead_head.png) left top no-repeat; }
+#cntHead p {
+  background: url(../images/sctHead_hMenuBkg.gif); }
+  #cntHead p a {
+    color: #3d2b13; }
+
+body {
+  background: url(../images/bkgGradient.gif) repeat-x;
+  background-color: #875a1d; }
+
+#bodyWrapper {
+  background: #fff url(../images/cntBody_fauxColBkg.gif) repeat-y; }
+
+#cntMenu {
+  background: #f2e5c5; }
+  #cntMenu ul li a {
+    background: url(../images/sctHead_hMenuBkg.gif);
+    color: #3d2b13; }
+
+.cntBody a {
+  color: #751017; }
+  .cntBody a:hover {
+    color: #A1161F; }
+
+#cntSide {
+  background: #f2e5c5; }
+
+#cntFoot {
+  color: #f2e5c5; }
+
+#calendar table {
+  border-color: #875a1d; }
+  #calendar table thead {
+    background-color: #875a1d;
+    color: #fff; }
+#calendar .today {
+  background: #CDC2A7; }
+#calendar .otherMonth {
+  color: #ccc; }
+
+.resource {
+  border-bottom-color: #875a1d; }

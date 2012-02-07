@@ -1,0 +1,14 @@
+﻿
+= title "Pokrajinske zveze društev upokojencev"
+
+- admin_section do
+  = link_to "Aktiviraj pokrajinsko zvezo", admin_tecum_subunions_path('new')
+  
+
+%p Naštete so pokrajinske zveze, po abecednem vrstnem redu.
+%p.notice Trenutno je navigacija po pokrajinskih zvezah v reorganizaciji.
+
+%ul.cntSubunions
+  = render :partial => "subunion", :collection => @subunions
+
+%p= will_paginate @subunions

@@ -1,0 +1,23 @@
+- @lightbox = true
+
+= title @project.title
+
+- admin_section do
+  = link_to "Uredi", admin_u_projects_path(:action => 'edit', :id => @project)
+  |
+  = link_to "Izbriši", admin_u_projects_path(:action => 'destroy', :id => @project), :confirm => del_conf_msg(@project.title)
+
+.resource_read
+  %p.author
+    - unless @project.manager.blank?
+      Vodja projekta oz. zapisal: 
+      = @project.manager
+  - unless @project.photo.nil?
+    %p.image= image_tag url_for_file_column(@project.photo, 'fileimage', 'thumb')
+  %p.text= @project.text
+  %div.attachments
+    %h2= "Priponke" unless @project.resource_attachments.empty?
+    = render :partial => 'attachment', :collection => @project.resource_attachments
+  %br.clear
+
+%p.back= link_to_back u_projects_path

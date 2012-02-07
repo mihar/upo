@@ -1,0 +1,80 @@
+// Union section color scheme
+
+!dark_green = #8a885b
+!background = #8a885b
+
+
+#cntTop,  #cntTop a
+  :color #eeeee4
+
+
+#cntHead
+  h1
+    a
+      :border-bottom 1px solid #929a5f
+      :background #f2e5c5 url(../images/union_sctHead_head.png) left top no-repeat
+
+    &.union a
+      :color #000
+      :font bold 16px/16px Arial, Helvetica, sans-serif
+      :text-decoration none
+      :letter-spacing 1px
+      
+  p
+    :background url(../images/union_sctHead_hMenuBkg.gif)
+
+    a
+      :color #eeeee4
+
+body
+  :background url(../images/union_bkgGradient.gif) repeat-x
+    :color = !background
+
+#bodyWrapper
+  :background #fff url(../images/union_cntBody_fauxColBkg.gif) repeat-y
+
+
+#cntMenu
+  :background #f2e5c5
+
+  ul li
+    a
+      :color #eeeee4
+      :background #f2e5c5 url(../images/union_sctHead_hMenuBkg.gif) repeat-x
+
+
+.cntBody
+  a
+    :color #751017
+
+    &:hover
+      :color #A1161F
+
+
+#cntFoot
+  :color #eeeee4
+
+
+// Calendar
+#calendar
+  table
+    :border-color = !dark_green
+    thead
+      :background-color = !dark_green
+      :color #fff
+  .today
+    :background #DAE48E
+  .otherMonth
+    :color #ccc
+
+
+
+
+
+//
+//  **************************************************************
+//  PAGE STYLES
+//  **************************************************************
+
+.resource
+  :border-bottom-color = !dark_green

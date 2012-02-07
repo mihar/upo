@@ -1,0 +1,13 @@
+.album
+  = link_to(image_tag( url_for_file_column(album.rep_image, 'filename', 'thumb') ), normal_link('album', {:id => album}) ) unless album.rep_image.nil?
+
+  .data
+    %h2
+      = link_to album.title, normal_link('album', {:id => album})
+      - admin_section do
+        = link_to "Uredi album", admin_link('gallery', {:action => 'edit_album', :id => album})
+  
+    .date= album.date_taken.strftime "%d. %m. %Y"
+    .num= album.photos.size, " ", sklanjaj_fotografije(album.photos.size)
+  
+  %br.clear

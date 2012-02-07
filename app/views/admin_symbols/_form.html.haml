@@ -1,0 +1,15 @@
+= error_messages_for 'symbolic'
+
+
+%p
+  %label{ :for => "symbolic_title" } Naziv
+  = text_field 'symbolic', 'title'
+%p.file
+  %label{ :for => "symbolic_image" } Slika
+  = file_column_field 'symbolic', 'image'
+%p
+  %label{ :for => "symbolic_description" } Opis
+  = text_area 'symbolic', 'description'
+
+
+= segment_id_field 'symbolic'

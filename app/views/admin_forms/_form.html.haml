@@ -1,0 +1,10 @@
+= error_messages_for 'form'
+
+
+%p
+  %label{ :for => "form_title" } Naziv obrazca
+  = text_field 'form', 'title'
+%p.file
+  %label{ :for => "form_file" } Datoteka obrazca
+  = file_column_field 'form', 'file'
+

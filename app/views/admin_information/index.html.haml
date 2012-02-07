@@ -1,0 +1,65 @@
+
+- @tinymce = true
+
+%h1 Urejanje podatkov za ZDUS
+
+
+- form_tag({:action => 'update'}, {:class => 'nice', :multipart => true}) do
+  = error_messages_for 'information'
+
+
+  %p
+    %label{ :for => "information_title" } Naziv zavoda
+    = text_field 'information', 'title'
+  %p
+    %label{ :for => "information_address" } Naslov
+    = text_field 'information', 'address'
+  %p
+    %label{ :for => "information_post" } Poštna številka
+    = text_field 'information', 'post_id'
+  %p
+    %label{ :for => "information_post" } Pošta
+    = text_field 'information', 'post'
+  %p
+    %label{ :for => "information_phone" } Telefon
+    = text_field 'information', 'phone'
+  %p
+    %label{ :for => "information_fax" } Telefaks
+    = text_field 'information', 'fax'
+  %p
+    %label{ :for => "information_web" } Spletna stran (brez http://)
+    = text_field 'information', 'web'
+  %p
+    %label{ :for => "information_email" } E-mail
+    = text_field 'information', 'email'
+  %p
+    %label{ :for => "information_email_contact" } Kontaktni e-mail
+    = text_field 'information', 'email_contact'
+  %p
+    %label{ :for => "information_email_contact_copy" } Kopija kont. e-mail
+    = text_field 'information', 'email_contact_copy'
+  %p
+    %label{ :for => "information_vatid" } ID št. za DDV
+    = text_field 'information', 'vatid'
+  %p
+    %label{ :for => "information_office_hours" } Uradne ure
+    = text_field 'information', 'office_hours'
+  %p.summary
+    %label Povzetek predstavitve
+    = text_area 'information', 'summary', :class => 'gui'
+  %p
+    %label{ :for => "information_about" } Predstavitev
+    = text_area 'information', 'about', :class => 'gui'
+  %p.file
+    %label{ :for => "information_image" } Slika
+    = file_column_field 'information', 'image'
+
+  - unless @information.image.nil?
+    = image_tag url_for_file_column(@information, "image", "thumb")
+  
+  
+  = nice_submit_tag
+
+
+
+%p.admin_controls= link_to_back zdus_about_path

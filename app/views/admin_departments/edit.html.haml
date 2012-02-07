@@ -1,0 +1,18 @@
+%h1 Urejanje organa
+
+
+- form_tag({:action => 'update', :id => @department}, {:class => 'nice'}) do
+  = render :partial => 'form'
+  = nice_submit_tag
+
+%h2 Priponke
+= render :partial => 'admin_resource_attachment/attachment', :collection => @department.resource_attachments
+
+%p.admin_controls
+  = render :partial => 'admin_resource_attachment/add_attachment_links', :locals => {:segment => 'department', :id => @department.id }
+  |
+  = link_to "Dodaj novo osebo v organ", :action => 'people_new', :department_id => @department
+  |
+  = link_to "Izbriši organ", {:action => 'destroy', :id => @department}, :confirm => del_conf_msg(@department.title)
+  |
+  = link_to_back normal_link('departments')

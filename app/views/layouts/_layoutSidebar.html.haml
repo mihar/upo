@@ -1,0 +1,9 @@
+- form_tag "http://www.google.com/cse", :id => 'cse-search-box', :method => :get do
+  %div
+    = hidden_field_tag :cx, "000351967858374000329:oop0gllt5y8"
+    = hidden_field_tag :ie, "UTF-8"
+    = text_field_tag :q, nil, :size => 31
+    = submit_tag "Išči", :name => 'sa', :id => 'search_submit'
+%script{:type=>"text/javascript", :src=>"http://www.google.com/coop/cse/brand?form=cse-search-box&lang=sl"}
+
+= render :partial => "shared/news_calendar"

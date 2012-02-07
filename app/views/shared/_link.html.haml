@@ -1,0 +1,9 @@
+%div[link]
+  %h2= link.title
+  = link.description
+  = link_to link.url, link.url, :class => 'link_link'
+
+  - admin_section do
+    = link_to "Uredi", admin_link('links', {:action => 'edit', :id => link})
+    |
+    = link_to "Izbriši", admin_link('links', {:action => 'destroy', :id => link}), :confirm => del_conf_msg(link.title)

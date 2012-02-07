@@ -1,0 +1,7 @@
+- admin_section do
+  = link_to "Dodaj novico", admin_link('news', {:action => 'new'})
+
+= render :partial => "shared/news", :collection => @news
+
+- unless @news.nil?
+  %div= will_paginate @news

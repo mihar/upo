@@ -1,0 +1,13 @@
+﻿
+= title "Društva upokojencev"
+
+- admin_section do
+  = link_to "Aktiviraj društvo upokojencev", admin_tecum_unions_path('new')
+
+%p Našteta so društva upokojencev, ki imajo urejeno spletno predstavitev, po abecednem vrstnem redu.
+/ %p.notice Trenutno je navigacija po društvih upokojencev v reorganizaciji.
+
+%ul.cntUnions
+  = render :partial => "union", :collection => @unions
+
+%p= will_paginate @unions

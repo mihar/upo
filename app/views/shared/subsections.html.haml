@@ -1,0 +1,7 @@
+﻿
+= title "Sekcije / Komisije"
+
+- admin_section do
+  = link_to "Dodaj sekcijo / komisijo", admin_link('subsections', {:action => 'new'})
+
+= render :partial => "shared/subsection", :collection => @subsections

@@ -1,0 +1,256 @@
+body {
+  font-family: Verdana, Helvetica, sans-serif; }
+
+#cntTop {
+  font: bold 11px/11px Arial, Helvetica, sans-serif;
+  text-align: right; }
+  #cntTop a {
+    text-decoration: none; }
+    #cntTop a:hover {
+      text-decoration: underline; }
+
+#cntHead h1 a {
+  font: bold 36px/100px Verdana, Helvetica, sans-serif;
+  letter-spacing: -2px;
+  color: #fff; }
+#cntHead p {
+  text-align: left; }
+  #cntHead p a {
+    padding: 0 5px;
+    text-decoration: none;
+    font: bold 13px/35px Verdana, sans-serif; }
+
+#bodyWrapper {
+  background: #fff url(../images/cntBody_fauxColBkg.gif) repeat-y; }
+
+.cntBody {
+  background: #ffffff;
+  font-family: Verdana, Helvetica, sans-serif;
+  font-size: 12px; }
+  .cntBody p {
+    line-height: 1.3em; }
+  .cntBody a {
+    text-decoration: none;
+    font-weight: bold; }
+    .cntBody a:hover {
+      text-decoration: underline; }
+  .cntBody h1 {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    letter-spacing: 0px;
+    letter-spacing: -1px;
+    font-size: 20px; }
+  .cntBody h2 {
+    font-size: 16px; }
+  .cntBody h3 {
+    font-size: 14px; }
+  .cntBody h4 {
+    font-size: 12px; }
+  .cntBody ul {
+    list-style: square; }
+  .cntBody h2, .cntBody h3, .cntBody h4, .cntBody h5, .cntBody h6 {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    letter-spacing: 0px; }
+  .cntBody .redCloth ul {
+    list-style: square inside; }
+  .cntBody .redCloth h2 {
+    border-bottom: 1px dashed #ccc; }
+  .cntBody .notice {
+    font-size: 16px;
+    background: #BA010A;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold; }
+
+#cntMenu ul li.long a {
+  letter-spacing: -0.5px; }
+#cntMenu ul li a {
+  font: bold 13px/35px Verdana;
+  padding: 0 10px;
+  text-decoration: none; }
+  #cntMenu ul li a:hover {
+    color: #000; }
+#cntMenu ul li.admin a {
+  background: url(../images/sctHead_hMenuBkg_admin.png);
+  color: #5E0000; }
+  #cntMenu ul li.admin a:hover {
+    color: #000; }
+#cntMenu ul li ul li a {
+  font: normal 12px/20px Verdana; }
+
+
+#cntFoot #counter {
+  color: #000; }
+#cntFoot p.copyright {
+  font-size: 11px; }
+#cntFoot p.tagline {
+  font: bold 11px/11px Arial, Helvetica, sans-serif; }
+
+#cntPaginator {
+  background: #FFDD5F;
+  border: 2px solid #D3AE15;
+  border-width: 2px 0 2px 0;
+  font-weight: normal; }
+  #cntPaginator a.next {
+    color: #000;
+    font-size: 13px;
+    line-height: 13px;
+    font-weight: normal; }
+  #cntPaginator a:hover.next {
+    border: 0;
+    background: #fff;
+    color: #000; }
+  #cntPaginator a.prev {
+    color: #000;
+    font-size: 13px;
+    line-height: 13px;
+    font-weight: normal; }
+  #cntPaginator a:hover.prev {
+    border: 0;
+    background: #fff;
+    color: #000; }
+  #cntPaginator ol {
+    list-style: none; }
+    #cntPaginator ol li a:hover {
+      background: #751018;
+      color: #fff;
+      border: 0; }
+      #cntPaginator ol li a:hover a {
+        color: #000;
+        font-size: 13px;
+        line-height: 13px; }
+
+div.cntPaginator {
+  background: #FFDD5F;
+  border: 2px solid #D3AE15;
+  border-width: 2px 0 2px 0;
+  font-weight: normal;
+  text-align: center; }
+  div.cntPaginator a:hover {
+    background: #ffe585;
+    border-bottom: 0; }
+  div.cntPaginator span.current {
+    background: #333;
+    color: #fff;
+    font-weight: bold; }
+  div.cntPaginator span.disabled {
+    color: #555; }
+
+div.admin {
+  background: #e0f642 url(../images/gfx_adminStripe.gif) !important;
+  color: #000 !important; }
+  div.admin a {
+    font: bold 12px/20px Arial, sans-serif;
+    text-decoration: none;
+    border: 0;
+    color: #000; }
+    div.admin a:hover {
+      color: #b71927;
+      border: 0;
+      text-decoration: none; }
+
+#cntAdmin {
+  background: #222;
+  color: #fff;
+  text-align: right;
+  font: 12px/14px Arial, sans-serif; }
+  #cntAdmin strong span {
+    font-weight: normal; }
+  #cntAdmin a {
+    color: #ebcf47;
+    font-weight: bold;
+    padding-left: 20px; }
+  #cntAdmin .flash_notice {
+    color: #FFC5BF;
+    font-weight: bold;
+    font-size: 14px/16px;
+    padding: 5px;
+    border: 2px solid #BF0B14;
+    border-width: 2px 0 2px 0;
+    margin-top: 12px;
+    background: #490000;
+    text-align: center; }
+
+#blkAdminGate {
+  background: transparent; }
+  #blkAdminGate:hover {
+    background: #ffff4c url(../images/btn_adminGateway.gif); }
+
+.fieldWithErrors {
+  background-color: red; }
+
+#errorExplanation {
+  border: 2px solid red;
+  background-color: #f0f0f0; }
+  #errorExplanation h2 {
+    text-align: left;
+    font-weight: bold;
+    font-size: 12px;
+    background-color: #c00;
+    color: #fff; }
+  #errorExplanation p {
+    color: #333; }
+  #errorExplanation ul li {
+    font-size: 12px;
+    list-style: square; }
+
+p.admin_controls {
+  margin-top: 20px;
+  padding: 5px 7.5px;
+  background: #333;
+  color: #fff;
+  font-size: 12px;
+  text-align: right; }
+  p.admin_controls a {
+    color: #ccc; }
+    p.admin_controls a:hover {
+      color: #fff;
+      border-color: #fff; }
+
+table.nice_listing {
+  background: #fff;
+  margin-top: 20px; }
+  table.nice_listing th {
+    font-size: 10px;
+    text-align: left;
+    color: #666; }
+  table.nice_listing td {
+    font-size: 12px;
+    padding: 3px 1px;
+    border-bottom: 1px solid #eee; }
+    table.nice_listing td.yes {
+      background: #80FF80;
+      text-align: center; }
+    table.nice_listing td.no {
+      background: #FF8080; }
+
+table.nice_listing td.no {
+  text-align: center; }
+
+form.nice {
+  font-size: 12px; }
+  form.nice label {
+    margin-right: 2.5%;
+    margin-bottom: 5px; }
+  form.nice p input {
+    border: 1px solid #ccc;
+    font: normal 12px Arial, Helvetica, sans-serif;
+    padding: 2px;
+    margin-bottom: 5px; }
+  form.nice p.file input {
+    border: 0; }
+  form.nice p.datetime {
+    font-size: 9px; }
+    form.nice p.datetime label {
+      font-size: 12px; }
+  form.nice p.submit {
+    margin-top: 20px;
+    background: #eee;
+    border-top: 10px dotted #fff;
+    padding: 10px;
+    text-align: center; }
+  form.nice textarea, form.nice select {
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    font: normal 12px Arial, Helvetica, sans-serif;
+    padding: 2px; }

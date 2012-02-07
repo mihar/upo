@@ -1,0 +1,7 @@
+%h1 Drustva
+
+- admin_section do
+  = link_to "Dodaj novo", admin_tecum_unions_path(:action => 'new')
+
+%ul
+  = render :partial => 'union', :collection => @unions

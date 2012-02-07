@@ -1,0 +1,15 @@
+%tr
+  %td= admin.name
+  %td= admin.surname
+  %td= admin.email
+  %td= admin.username
+  = determine_admin_status admin.haxor?
+  = determine_admin_status admin.zdus?
+  = determine_admin_union_status admin.subunion
+  = determine_admin_union_status admin.union
+  %td
+    - admin_section do
+      = link_to 'Uredi', admin_tecum_admins_path(:action => 'edit', :id => admin)
+  %td
+    - admin_section do
+      = link_to 'Izbriši', admin_tecum_admins_path(:action => 'destroy', :id => admin), :confirm => del_conf_msg(admin.name_and_surname), :method => :post

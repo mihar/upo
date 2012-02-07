@@ -1,0 +1,116 @@
+.date_limiter {
+  padding: 10px;
+  margin: 1em 0;
+  background: #e2e2e2; }
+  .date_limiter label {
+    font-weight: bold; }
+  .date_limiter input, .date_limiter select {
+    font-size: 11px; }
+
+#blkKontakt {
+  margin-bottom: 30px; }
+
+.blkOrgan .person {
+  position: relative;
+  min-height: 75px; }
+  .blkOrgan .person p {
+    clear: left; }
+  .blkOrgan .person strong {
+    width: 120px; }
+  .blkOrgan .person img {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    display: block; }
+  .blkOrgan .person div.admin {
+    position: absolute;
+    bottom: 2px;
+    right: 2px; }
+
+.cntSubunions li {
+  margin: 0; }
+  .cntSubunions li a {
+    padding: 5px 0; }
+
+.cntUnions li {
+  margin: 0; }
+  .cntUnions li a {
+    padding: 5px 0; }
+
+.album {
+  height: 100px;
+  padding: 5px;
+  margin-bottom: 10px; }
+  .album img {
+    float: left;
+    width: 100px;
+    height: 100px;
+    display: block;
+    padding-right: 15px; }
+  .album .data {
+    float: left; }
+    .album .data h2 {
+      width: 380px;
+      margin: 0;
+      padding: 0; }
+      .album .data h2 div.admin {
+        display: inline; }
+    .album .data .num {
+      right: 10px; }
+
+dl.sctPhotoData dt {
+  float: left; }
+dl.sctPhotoData dt.sctAuthor {
+  margin-left: 30px; }
+dl.sctPhotoData dd {
+  margin-left: 5px; }
+
+h1.sctAlbumTitle {
+  margin-bottom: 5px;
+  padding-bottom: 0; }
+
+dl.sctPhotoData dd {
+  float: left; }
+
+ul#album_photos {
+  margin: 20px 0 10px 0; }
+  ul#album_photos li {
+    float: left;
+    list-style: none;
+    width: 100px;
+    height: 135px;
+    padding: 5px;
+    margin: 0 5px 5px 0; }
+    ul#album_photos li a img {
+      border: 0; }
+  ul#album_photos li.admin {
+    height: 200px; }
+    ul#album_photos li.admin a {
+      display: block; }
+      ul#album_photos li.admin a.admin {
+        margin-top: 15px; }
+
+p.sctAlbumDatum {
+  margin: 5px 0; }
+
+p.sctAlbumOpis {
+  margin: 5px 0; }
+
+p.sctPhotoImage {
+  margin: 20px 0; }
+
+p.sctPhotoDescription {
+  padding-left: 10px; }
+
+.blkSymbol {
+  padding: 2px; }
+  .blkSymbol p {
+    float: left;
+    margin: 0;
+    padding: 0; }
+  .blkSymbol img {
+    margin: 0 10px 10px 0;
+    float: left; }
+
+ul.obrazci {
+  margin: 10px; }

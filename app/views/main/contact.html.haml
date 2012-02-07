@@ -1,0 +1,16 @@
+= title "Kontakt"
+
+- admin_section do
+  = link_to "Uredi kontaktne podakte", admin_zdus_information_path
+
+= render :partial => "contact"
+
+%h2 Kje nas najdete
+%p.cntZemljevid
+  = link_to image_tag('sctKontakt_zemljevid.gif'), "/images/sctKontakt_zemljevidBig.jpg"
+%p &copy;2008 Google - Map data &copy;2008 AND
+
+- admin_section do
+  = link_to "Dodaj nov organ", admin_link('departments', {:action => 'new'})
+
+= render :partial => 'shared/department', :collection => @departments

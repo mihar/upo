@@ -1,0 +1,15 @@
+= error_messages_for 'page'
+
+- @tinymce = true
+
+%p
+  %label{ :for => "page_title" } Naziv strani
+  = text_field 'page', 'title'
+
+%p
+  %label{ :for => "page_text" } Besedilo
+  = text_area 'page', 'text', :class => 'gui'
+
+/ %p
+/   %label{ :for => "page_position" } Pozicija
+/   = text_field 'page', 'position'

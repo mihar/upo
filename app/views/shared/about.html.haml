@@ -1,0 +1,9 @@
+%h1 O nas
+- admin_section do
+  = link_to "Uredi opis društva", admin_link("information")
+
+- unless @union.image.nil?
+  %p= image_tag url_for_file_column(@union, "image", "normal")
+
+- unless @union.nil?
+  .redCloth= @union.description_formatted

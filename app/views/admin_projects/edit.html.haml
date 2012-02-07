@@ -1,0 +1,17 @@
+%h1 Urejanje projekta
+
+
+- form_tag({:action => 'update', :id => @project}, {:class => 'nice'}) do
+  = render :partial => 'form'
+
+  = nice_submit_tag
+  
+%h2 Priponke
+= render :partial => 'admin_resource_attachment/attachment', :collection => @project.resource_attachments
+
+%p.admin_controls
+  = render :partial => 'admin_resource_attachment/add_attachment_links', :locals => {:segment => 'project', :id => @project.id}
+  |
+  = link_to_back u_projects_path
+  |
+  = link_to "Izbriši", admin_u_projects_path('destroy', @project), :confirm => del_conf_msg(@project.title)

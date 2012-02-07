@@ -1,0 +1,12 @@
+- unless attachment.fileimage.nil?
+  %p{:class => "file_#{kind_from_extension(file_extension( attachment.fileimage ))}"}
+    = link_to File.basename(attachment.fileimage), url_for_file_column(attachment, 'fileimage')  
+- unless attachment.filedata.nil?
+  %p{:class => "file_#{kind_from_extension(file_extension( attachment.filedata ))}"}
+    = link_to File.basename(attachment.filedata), url_for_file_column(attachment, 'filedata'), :class => 'file_download'    
+- unless attachment.link.nil?
+  %p.file_link
+    = link_to attachment.title, attachment.link
+- unless attachment.google_video.nil?
+  %p.file_mov
+    = link_to attachment.title

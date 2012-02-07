@@ -1,0 +1,16 @@
+%h1 Urejanje sekcije/komisije
+
+
+- form_tag({:action => 'update', :id => @subsection}, {:class => 'nice'}) do
+  = render :partial => 'form'
+  = nice_submit_tag
+
+%h2 Priponke
+= render :partial => 'admin_resource_attachment/attachment', :collection => @subsection.resource_attachments
+
+%p.admin_controls
+  = render :partial => 'admin_resource_attachment/add_attachment_links', :locals => {:segment => 'subsection', :id => @subsection.id}
+  |
+  = link_to 'Izbriši sekcijo/komisijo', admin_link("subsections", {:action => 'destroy', :id => @subsection}), :confirm => del_conf_msg(@subsection.title)
+  |
+  = link_to_back normal_link('subsections')

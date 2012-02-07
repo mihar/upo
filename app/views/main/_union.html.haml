@@ -1,0 +1,5 @@
+%li
+  = link_to union.title, union_friendly_path(union.title_websafe)
+  - admin_section do
+    = link_to "Izbriši društvo", admin_tecum_unions_path('destroy', union), :confirm => del_conf_msg(union.title)
+

@@ -1,0 +1,18 @@
+%h1 Urejanje strani
+
+- form_tag( {:action => 'update', :id => @page}, {:class => 'nice'} ) do
+  = render :partial => 'form'
+  = nice_submit_tag
+
+- unless @page.resource_attachments.empty?
+  %h2 Priponke
+  %div.attachments= render :partial => 'main/attachment', :collection => @page.resource_attachments, :locals => {:segment => 'page', :id => @page}
+- if admin?
+  .attachment_admin
+    %h4= "Dodaj priponke za &raquo;#{@page.menu_title}&laquo;"
+    = render :partial => 'admin_resource_attachment/add_attachment_links', :locals => {:segment => 'page', :id => @page}
+
+%p.admin_controls
+  = link_to "Izbriši stran", admin_pages_path(:action => 'destroy', :id => @page), :confirm => del_conf_msg(@page.title)
+  |
+  = link_to_back zdus_page_path(@page)

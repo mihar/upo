@@ -1,0 +1,15 @@
+= title @page.title
+
+- admin_section do
+  = link_to "Uredi &raquo;#{@page.title}&laquo;", admin_pages_path(:action => 'edit', :id => @page)
+
+= @page.text
+
+- unless @page.resource_attachments.empty?
+  %h2 Priponke
+  %div.attachments= render :partial => 'attachment', :collection => @page.resource_attachments, :locals => {:segment => 'page', :id => @page}
+- if admin?
+  .attachment_admin
+    %h4= "Dodaj priponke za &raquo;#{@page.menu_title}&laquo;"
+    = render :partial => 'admin_resource_attachment/add_attachment_links', :locals => {:segment => 'page', :id => @page} 
+

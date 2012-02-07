@@ -1,0 +1,51 @@
+#cntTop, #cntTop a {
+  color: #dce9f1; }
+
+#cntHead h1 a {
+  border-bottom: 1px solid;
+  border-bottom-color: #2f92e1;
+  background: url(../images/subunion_sctHead_head.png) left top no-repeat;
+  background-color: #9fc1d8; }
+#cntHead h1.subunion a {
+  color: #000;
+  font: bold 16px/16px Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  letter-spacing: 1px; }
+#cntHead p {
+  background: url(../images/subunion_sctHead_hMenuBkg.gif); }
+  #cntHead p a {
+    color: #234b77; }
+
+body {
+  background: url(../images/subunion_bkgGradient.gif) repeat-x;
+  background-color: #9fc1d8; }
+
+#bodyWrapper {
+  background: #fff url(../images/subunion_cntBody_fauxColBkg.gif) repeat-y; }
+
+#cntMenu {
+  background-color: #9fc1d8; }
+  #cntMenu ul li a {
+    color: #234b77;
+    background: #f2e5c5 url(../images/subunion_sctHead_hMenuBkg.gif) repeat-x; }
+
+.cntBody a {
+  color: #751017; }
+  .cntBody a:hover {
+    color: #A1161F; }
+
+#cntFoot {
+  color: #234b77; }
+
+#calendar table {
+  border-color: #2f92e1; }
+  #calendar table thead {
+    background-color: #2f92e1;
+    color: #fff; }
+#calendar .today {
+  background: #80C8ED; }
+#calendar .otherMonth {
+  color: #ccc; }
+
+.resource {
+  border-bottom-color: #9fc1d8; }

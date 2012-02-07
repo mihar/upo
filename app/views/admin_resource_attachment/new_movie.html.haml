@@ -1,0 +1,31 @@
+%h1.new_attachment 
+  %span.title Nov film
+  %span.fileicons
+    = image_tag 'fileicons/typeicon_mov.gif'
+  %br.clear
+
+%p 
+  Da bi dodali film, ga morate najprej naložiti na internet preko Google Video. To lahko storite na 
+  = link_to "tej strani", "https://upload.video.google.com/"
+  (za nalaganje morate imeti odprt brezplačen račun pri Google-u).
+
+- form_tag({:action => 'create'}, {:class => 'nice'}) do
+  = error_messages_for 'attachment'
+
+  %p
+    %label{ :for => "attachment_title" } Naziv videa
+    = text_field 'attachment', 'title'
+  %p.summary
+    %label{ :for => "attachment_summary" } Opis videa
+    = text_area 'attachment', 'summary'
+  %p
+    %label{ :for => "attachment_google_video" } Google Video povezava
+    = text_field 'attachment', 'google_video'
+
+  = render :partial => 'id_fields'
+    
+  = nice_submit_tag
+
+
+= render :partial => 'admin_controls'
+

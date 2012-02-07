@@ -1,0 +1,10 @@
+%h1 Urejanje naziva kategorije
+
+- form_tag( {:action => 'update', :id => @category}, {:class => 'nice'} ) do
+  = render :partial => 'form'
+  = nice_submit_tag
+
+%p.admin_controls
+  = link_to "Izbriši kategorijo", admin_tecum_categories_path(:action => 'destroy', :id => @category), :confirm => del_conf_msg(@category.title)
+  |
+  = link_to_back admin_tecum_categories_path

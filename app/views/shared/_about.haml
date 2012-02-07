@@ -1,0 +1,4 @@
+- unless @union.image.nil?
+  %p= image_tag url_for_file_column(@union, "image", "normal")
+  
+= @union.summary

@@ -1,0 +1,8 @@
+= title "Dokumenti"
+
+- admin_section do
+  = link_to "Dodaj dokument", admin_zdus_docs_path('new')
+
+%ul
+  - @doc_categories.each do |dc|
+    %li= link_to dc.title, zdus_docs_read_path(dc)

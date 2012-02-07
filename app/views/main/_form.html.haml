@@ -1,0 +1,6 @@
+%li
+  = link_to form.title, url_for_file_column(form, 'file')
+  - admin_section do
+    = link_to 'Uredi', admin_zdus_forms_path(:action => 'edit', :id => form)
+    |
+    = link_to 'Izbriši', admin_zdus_forms_path(:action => 'destroy', :id => form), :confirm => del_conf_msg(form.title)

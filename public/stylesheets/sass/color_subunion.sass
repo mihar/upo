@@ -1,0 +1,82 @@
+// Subunion section color scheme
+
+!dark_blue = #2f92e1
+!background = #9fc1d8
+
+
+#cntTop,  #cntTop a
+  :color #dce9f1
+
+
+#cntHead
+  h1
+    a
+      :border-bottom 1px solid
+        :color = !dark_blue
+      :background url(../images/subunion_sctHead_head.png) left top no-repeat
+        :color = !background
+
+    &.subunion a
+      :color #000
+      :font bold 16px/16px Arial, Helvetica, sans-serif
+      :text-decoration none
+      :letter-spacing 1px
+
+  p
+    :background url(../images/subunion_sctHead_hMenuBkg.gif)
+
+    a
+      :color #234b77
+      
+
+body
+  :background url(../images/subunion_bkgGradient.gif) repeat-x
+    :color = !background
+
+
+#bodyWrapper
+  :background #fff url(../images/subunion_cntBody_fauxColBkg.gif) repeat-y
+
+
+#cntMenu
+  :background-color = !background
+
+  ul li
+    a
+      :color #234b77
+      :background #f2e5c5 url(../images/subunion_sctHead_hMenuBkg.gif) repeat-x
+
+
+.cntBody
+  a
+    :color #751017
+
+    &:hover
+      :color #A1161F
+
+
+#cntFoot
+  :color #234b77
+
+
+// Calendar
+#calendar
+  table
+    :border-color = !dark_blue
+    thead
+      :background-color = !dark_blue
+      :color #fff
+  .today
+    :background #80C8ED
+  .otherMonth
+    :color #ccc
+
+
+
+//
+//  **************************************************************
+//  PAGE STYLES
+//  **************************************************************
+
+.resource
+  :border-bottom-color = !background

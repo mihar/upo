@@ -1,0 +1,8 @@
+%h1 Nov organ
+
+- form_tag({:action => 'create'}, {:class => 'nice'}) do
+  = render :partial => 'form'
+  = nice_submit_tag "Ustvari"
+
+
+%p.admin_controls= link_to 'Nazaj', normal_link('departments')

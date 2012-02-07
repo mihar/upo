@@ -1,0 +1,36 @@
+.person
+  %p.sctIme
+    %strong Ime in priimek:
+    = person.full_name
+
+  - unless person.function.blank?
+    %p
+      %strong Funkcija:
+      = person.function
+
+  - unless person.address.blank?
+    %p
+      %strong Naslov:
+      = person.address, ", "
+      = person.post
+
+  - unless person.telephone.blank?
+    %p
+      %strong Telefon:
+      = person.telephone
+
+  - unless person.fax.blank?
+    %p
+      %strong Faks:
+      = person.fax
+
+  - unless person.email.blank?
+    %p
+      %strong E-pošta:
+      = link_to person.email, "mailto:#{person.email}"
+
+  - unless person.image.blank?
+    = image_tag(url_for_file_column(person, "image", "square75"))
+      
+  - admin_section do
+    = link_to "Uredi osebo", admin_link('departments', {:action => 'people_edit', :id => person})

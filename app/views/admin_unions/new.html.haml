@@ -1,0 +1,6 @@
+%h1 Novo društvo
+
+- form_tag({:action => 'create'}, {:class => 'nice'}) do
+  = render :partial => 'form'
+  = nice_submit_tag
+  

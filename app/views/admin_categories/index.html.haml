@@ -1,0 +1,13 @@
+%h1 Kategorije
+
+- admin_section do
+  = link_to "Aktiviraj kategorijo", admin_tecum_categories_path(:action => 'new')
+
+
+%p Strani lahko urejate z vlečenjem.
+
+%ol#categories.sortable
+  = render :partial => 'category', :collection => @categories
+  
+  
+= sortable_element('categories', :url => {:action => :update_positions})

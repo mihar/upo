@@ -1,0 +1,9 @@
+﻿
+= title "Povezave"
+- admin_section do
+  = link_to "Dodaj povezavo", admin_link('links', {:action => 'new'})
+  |
+  = link_to "Uredi vrstni red", admin_link('links', {:action => 'index'})
+
+#links
+  = render :partial => "shared/link", :collection => @links

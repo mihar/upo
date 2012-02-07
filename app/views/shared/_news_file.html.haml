@@ -1,0 +1,6 @@
+- unless news_file.fileimage.nil?
+  %p{:class => "file_#{kind_from_extension(file_extension( news_file.fileimage ))}"}
+    = link_to File.basename(news_file.fileimage), url_for_file_column(news_file, 'fileimage')  
+- unless news_file.filedata.nil?
+  %p{:class => "file_#{kind_from_extension(file_extension( news_file.filedata ))}"}
+    = link_to File.basename(news_file.filedata), url_for_file_column(news_file, 'filedata'), :class => 'file_download'    

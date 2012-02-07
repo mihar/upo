@@ -1,0 +1,31 @@
+= error_messages_for 'resource'
+- @tinymce = true
+
+%p
+  %label{ :for => "resource_title" } Naslov
+  = text_field 'resource', 'title'
+
+%p.date
+  %label{ :for => "resource_created_at" } Datum
+  %span= date_select 'resource', 'created_at'
+
+%p
+  %label{ :for => "resource_author" } Avtor
+  = text_field 'resource', 'author'
+
+%p.summary
+  %label{ :for => "resource_summary" } Povzetek
+  = text_area 'resource', 'summary'
+
+%p
+  %label{ :for => "resource_text" } Besedilo
+  = text_area 'resource', 'text', :class => 'gui'
+  
+%p
+  %label{ :for => "resource_category" } Kategorija
+  - if params[:standalone]
+    = collection_select 'resource', 'category_id', @resource_categories, :id, :title
+  - unless params[:standalone]
+    = collection_select 'resource', 'resource_category_id', @resource_categories, :id, :title
+
+= segment_id_field('resource')

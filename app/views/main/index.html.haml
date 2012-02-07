@@ -1,0 +1,9 @@
+﻿
+%h1 Dobrodošli na naših spletnih straneh
+
+- unless @information.image.nil?
+  %p= image_tag url_for_file_column(@information, "image", "normal")
+
+%p
+  = @information.summary
+  = link_to_more zdus_about_path, @information.about, 'no'

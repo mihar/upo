@@ -1,0 +1,24 @@
+%ul#blkKontakt
+  %li 
+    %span Naslov:
+    = @union.title, ", "
+    = @union.address, ", "
+    = @union.postal_number, " ", @union.locality
+  %li
+    %span Kontaktna oseba
+    = @union.contact
+  %li
+    %span Uradne ure:
+    = @union.working_hours if @union.working_hours
+  %li
+    %span Telefon:
+    = @union.telephone if @union.telephone
+  
+  - unless @union.email.blank?
+    %li
+      %span E-pošta:
+      = link_to @union.email, "mailto:#{@union.email}"
+  - unless @union.www.blank?
+    %li
+      %span Spletna stran:
+      = link_to @union.www, uri_normalize(@union.www)

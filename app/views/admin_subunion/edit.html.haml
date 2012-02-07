@@ -1,0 +1,22 @@
+%h1 Glavna stran
+
+
+- form_tag( admin_link('information', {:action => 'edit'}), { :multipart => true, :class => 'nice' } ) do
+  = render :partial => 'form'
+  
+  - unless @union.logo.nil?
+    %p
+      %label{ :for => "union_logo" } Logotip zveze
+      = image_tag url_for_file_column(@union, "logo", "head")
+
+
+  - unless @union.image.nil?
+    %p
+      %label{ :for => "union_image" } Fotografija zveze
+      = image_tag url_for_file_column(@union, "image", "thumb")
+
+
+  = nice_submit_tag
+
+
+%p.admin_controls= link_to_back subu_index_path

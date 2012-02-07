@@ -1,0 +1,11 @@
+%h1= @news.title
+%h2 Urejanje priponk
+
+= render :partial => 'news_file', :collection => @news.news_files
+
+%p.admin_controls
+  = link_to 'Dodaj datoteko', admin_link('news_file', {:action => 'new_file', :id => @news})
+  |
+  = link_to 'Dodaj sliko', admin_link('news_file', {:action => 'new_image', :id => @news})
+  |
+  = link_to_back admin_link('news', {:action => 'edit', :id => @news})

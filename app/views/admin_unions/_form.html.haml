@@ -1,0 +1,14 @@
+= error_messages_for 'union'
+
+
+%p
+  %label{ :for => "union_title" } Naziv društva
+  = text_field 'union', 'title'
+
+%p
+  %label{ :for => "union_permalink" } Domena društva
+  = text_field 'union', 'permalink'
+  
+%p
+  %label{ :for => "union_subunion_id" } Pokrajinska zveza
+  = collection_select 'union', 'subunion_id', @subunions, :id, :title, :include_blank => true

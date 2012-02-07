@@ -1,0 +1,44 @@
+!!! strict
+%html{ :lang => "sl" }
+%head
+
+  %head
+    %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "Content-Type" }/
+    %link{ :href => "/favicon.ico", :rel => "shortcut icon", :type => "image/x-icon" }/
+    
+    %title
+      - if @page_title
+        = "#{@page_title} (Zveza Društev Upokojencev Slovenije)"
+      - else
+        Zveza Društev Upokojencev Slovenije
+
+    = render :partial => 'layouts/common_includes'
+
+  %body
+    = render :partial => "layouts/top_info"
+    #cntHead
+      %a{ :name => "top" }
+      - unless admin_zdus?
+        = link_to "", adminlogin_path, :id => 'blkAdminGate'
+      %h1
+        = link_to "<span>Zveza Društev Upokojencev Slovenije</span>", index_url
+      = # render :partial => "main/horizontalMenu"
+
+      = render :partial => "layouts/adminMenu"
+
+
+    #bodyWrapper
+      #cntMenu
+        = render :partial => "main/layoutMenu"
+      %hr
+      
+      .cntBody
+        = yield :layout
+
+      /#cntSide
+      /  = # render :partial => "layouts/layoutSidebar"
+      %br.clear
+
+    %hr
+
+    = render :partial => "layouts/foot"

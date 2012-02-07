@@ -1,0 +1,15 @@
+.blkNews
+  %h3
+    = izdela.title
+    - admin_section do
+      = link_to "Uredi vest", admin_link('izdela', {:action => 'edit', :id => izdela.id})
+
+  %p.date= izdela.created_at.to_s(:long)
+  
+  - unless izdela.photo.nil?
+    %p.image= image_tag url_for_file_column(izdela.photo, 'fileimage', 'small')
+    
+  %p.summary
+    = izdela.summary
+    = link_to_more normal_link('izdela_read', {:id => izdela})
+    %br.clear

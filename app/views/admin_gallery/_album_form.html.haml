@@ -1,0 +1,19 @@
+= error_messages_for 'album'
+
+- form_for(:album, @album, :url => { :action => 'save_album', :id => @album.id }, :html => { :class => 'nice' }) do |f|
+  %p
+    %label Naslov
+    = f.text_field :title
+
+  %p.date
+    %label Datum
+    = date_select :album, :date_taken
+
+  %p
+    %label Opis
+    = f.text_area :description
+
+
+  = segment_id_field("union_id", f)
+  
+  = nice_submit_tag

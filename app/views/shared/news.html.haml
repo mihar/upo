@@ -1,0 +1,21 @@
+﻿
+- @lightbox = true
+
+= title @news.title
+
+- admin_section do
+  = link_to "Uredi", admin_link('news', {:action => 'edit', :id => @news})
+  |
+  = link_to "Izbriši", admin_link('news', {:action => 'destroy', :id => @news}), :confirm => del_conf_msg(@news.title)
+
+.resource_read
+  %p.date= @news.created_at.to_s(:long)
+  - unless @news.photo.nil?
+    %p.image= link_to(image_tag(url_for_file_column(@news.photo, 'fileimage', 'thumb')), url_for_file_column(@news.photo, 'fileimage', 'medium'), :rel => 'lightbox')  
+  %p.text= @news.text
+  %div.attachments
+    %h2 Priponke
+    = render :partial => 'shared/news_file', :collection => @news.news_files
+  %br.clear
+
+%p.back= link_to_back normal_news_link

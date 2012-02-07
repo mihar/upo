@@ -1,0 +1,19 @@
+- @lightbox = true
+
+= title @photo.title
+
+- admin_section do
+  = link_to "Uredi fotografijo", admin_link('gallery', {:action => 'edit_photo', :id => @photo})
+
+%ul.sctPhotoData
+  %li= "Datum: ", @photo.date.to_s(:long)
+  %li= "Avtor: ", @photo.author
+
+%p.sctPhotoImage= image_tag(url_for_file_column(@photo, "filename", "medium"))
+
+%p.sctPhotoDescription= @photo.description
+
+#cntPaginator
+  = link_to "Prejšnja", normal_link("photo", {:id => @prev_p}), :class => 'prev'
+  = link_to "Naslednja", normal_link("photo", {:id => @next_p}), :class => 'next'
+  %br.clear

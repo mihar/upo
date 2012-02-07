@@ -1,0 +1,11 @@
+- @page_title = 'Kontakt'
+
+%h1 Kontakt
+- admin_section do
+  = link_to "Uredi kontaktne podatke", admin_link('information')
+
+= render :partial => 'shared/contact'
+
+%h2 Kje nas najdete
+= image_tag 'sctKontakt_iconCompass.gif'
+= link_to "Zemljevid", "http://zemljevid.najdi.si/search_maps.jsp?q=#{@union.postal_number}+#{@union.address}&tab=maps"

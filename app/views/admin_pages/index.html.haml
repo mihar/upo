@@ -1,0 +1,15 @@
+%h1 Strani
+
+- admin_section do
+  = link_to "Aktiviraj stran", admin_pages_path(:action => 'new')
+
+%p Strani lahko urejate z vlečenjem.
+
+%ol#pages.sortable
+  - @pages.each do |p|
+    %li[p]
+      = p.title
+      - admin_section do
+        = link_to "Uredi", admin_pages_path(:action => 'edit', :id => p)
+
+= sortable_element('pages', :url => {:action => :update_positions})

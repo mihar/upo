@@ -1,0 +1,10 @@
+= error_messages_for 'doc'
+
+
+%p
+  %label{ :for => "doc_title" } Naziv dokumenta
+  = text_field 'doc', 'title'
+%p.file
+  %label{ :for => "doc_file" } Dokument
+  = file_column_field 'doc', 'file'
+

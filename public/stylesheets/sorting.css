@@ -1,0 +1,26 @@
+ul.sortable li {
+  cursor: move; }
+
+ol.sortable {
+  margin: 10px; }
+  ol.sortable li {
+    list-style: decimal inside;
+    background: #ddd;
+    border-bottom: 2px solid #ccc;
+    margin-bottom: 5px;
+    cursor: move;
+    font-weight: bold;
+    padding: 2px 0 2px 5px; }
+    ol.sortable li em {
+      font-size: 10px;
+      color: #666;
+      font-weight: normal; }
+    ol.sortable li ol {
+      margin: 5px 0; }
+      ol.sortable li ol li {
+        border-bottom: 0;
+        margin-left: 15px;
+        margin-bottom: 2px;
+        font-weight: normal;
+        background: #eee;
+        padding: 1px; }

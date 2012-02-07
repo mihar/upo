@@ -1,0 +1,51 @@
+
+= error_messages_for 'subunion'
+- @tinymce = true
+
+%p
+  %label{ :for => "subunion_title" } Naziv društva
+  = text_field 'subunion', 'title'
+
+%p
+  %label{ :for => "subunion_contact" } Kontaktna oseba
+  = text_field 'subunion', 'contact'
+%p
+  %label{ :for => "subunion_working_hours" } Uradne ure
+  = text_field 'subunion', 'working_hours'
+%p
+  %label{ :for => "subunion_address" } Naslov
+  = text_field 'subunion', 'address'
+%p
+  %label{ :for => "subunion_locality" } Kraj
+  = text_field 'subunion', 'locality'
+%p
+  %label{ :for => "subunion_postal_number" } Poštna številka
+  = text_field 'subunion', 'postal_number'
+%p
+  %label{ :for => "subunion_telephone" } Telefon
+  = text_field 'subunion', 'telephone'
+%p
+  %label{ :for => "subunion_email" } E-pošta
+  = text_field 'subunion', 'email'
+%p
+  %label{ :for => "subunion_email_contact" } Kontaktna e-pošta
+  = text_field 'subunion', 'email_contact'
+%p
+  %label{ :for => "subunion_email_contact_copy" } Kopija kont. e-pošta
+  = text_field 'subunion', 'email_contact_copy'
+%p
+  %label{ :for => "subunion_www" } Spletna stran
+  = text_field 'subunion', 'www'
+%p.summary
+  %label Povzetek opisa
+  = text_area 'subunion', 'summary'
+%p
+  %label{ :for => "subunion_description" } Opis
+  = text_area 'subunion', 'description', :class => 'gui'
+
+%p.file
+  %label{ :for => "subunion_logo" } Logotip društva
+  = file_column_field 'subunion', 'logo'
+%p.file
+  %label{ :for => "subunion_image" } Fotografija društva
+  = file_column_field 'subunion', 'image'

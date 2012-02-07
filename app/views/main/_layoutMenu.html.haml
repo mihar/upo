@@ -1,0 +1,37 @@
+%ul#menu
+  %li
+    = link_to "Društva upokojencev"#, zdus_about_path
+    / - if in_about?
+    /       %ul
+    /         %li= link_to "Pod žarometom", zdus_about_path
+    /         %li= link_to "Kontakti", zdus_contact_path
+    /         - @pages.each do |p|
+    /           %li= link_to p.title, zdus_page_path(p)
+    /         %li= link_to "Simboli", zdus_symbols_path
+    /         %li= link_to "Obrazci/prijavnice", zdus_forms_path
+    /         %li= link_to "Fotogalerija", zdus_gallery_path  
+    /   %li= link_to "Pokrajinske zveze DU", zdus_subunions_path
+    /   %li= link_to "Društva upokojencev", zdus_unions_path  
+    /   - @categories.each do |c|
+    /     %li
+    /       - if c.resource_categories.empty?
+    /         = link_to c.title, cat_path(c)
+    /       - else
+    /         = link_to c.title, cat_path(c)        
+    /       - unless c.standalone?
+    /         - if current_category(c)
+    /           %ul
+    /             - c.resource_categories.each do |rc|
+    /               %li= link_to rc.menu_title, res_path(rc)
+    /             %li= link_to "Arhiv", cat_archive_path(c)
+    /   
+    /   %li= link_to "Koristne povezave", zdus_links_path(:id => nil)
+    / 
+    /   - if admin?
+    /     %li.admin
+    /       = link_to "Administracija Tecum"
+    /       %ul
+    /         %li= link_to "Uporabniki", admin_tecum_admins_path
+    /         %li= link_to "Kategorije", admin_tecum_categories_path
+    /         %li= link_to "Podkategorije", admin_tecum_resource_categories_path
+    /         %li= link_to "Strani", admin_pages_path

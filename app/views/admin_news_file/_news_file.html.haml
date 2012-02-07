@@ -1,0 +1,12 @@
+- unless news_file.fileimage.nil?
+  .attachment_file_image
+    = link_to image_tag( url_for_file_column(news_file, 'fileimage', 'thumb') ), url_for_file_column(news_file, 'fileimage', 'medium'), :rel => 'lightbox'
+    - admin_section do
+      = news_file_admin_links(news_file)
+  
+- unless news_file.filedata.nil?
+  .attachment_file_file
+    = link_to File.basename(news_file.filedata), url_for_file_column(news_file, 'filedata'), :class => 'file_download'
+    %span.ext= file_extension( news_file.filedata ).swapcase
+    - admin_section do
+      = news_file_admin_links(news_file)

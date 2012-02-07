@@ -1,0 +1,21 @@
+%h1 Urejanje dejavnosti
+
+- @tinymce = true
+
+- form_tag({:action => 'update'}, {:class => 'nice'}) do
+  = error_messages_for 'activities'
+  %p
+    %label{ :for => "activities_activities" } Dejavnost
+    = text_area 'activities', 'activities', :class => 'gui'
+    %br
+    
+  = segment_id_field 'activities'
+  = nice_submit_tag
+
+%h2 Priponke
+= render :partial => 'admin_resource_attachment/attachment', :collection => @activities.resource_attachments
+
+%p.admin_controls
+  = link_to_back normal_link('activities')
+  |
+  = render :partial => 'admin_resource_attachment/add_attachment_links', :locals => {:segment => 'activities', :id => @activities.id}

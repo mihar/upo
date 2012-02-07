@@ -1,0 +1,22 @@
+= title @category.title
+
+- admin_section do
+  = link_to "Uredi &raquo;#{@category.menu_title}&laquo;", admin_tecum_resource_categories_path(:action => "edit", :id => @category)
+
+- if @category.description
+  #cat_description= @category.description
+
+- unless @category.resource_attachments.empty?
+  %h2 Priponke
+  %div.attachments= render :partial => 'attachment', :collection => @category.resource_attachments, :locals => {:segment => 'resource_category', :id => @category}
+- if admin?
+  .attachment_admin
+    %h4= "Dodaj priponke za &raquo;#{@category.menu_title}&laquo;"
+    = render :partial => 'admin_resource_attachment/add_attachment_links', :locals => {:segment => 'resource_category', :id => @category} 
+
+
+- admin_section do
+  = link_to "Dodaj vsebino", admin_res_path(:action => "new", :category_id => @category)
+  
+= render :partial => 'resource', :collection => @resources
+= will_paginate @resources

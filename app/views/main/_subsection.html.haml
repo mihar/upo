@@ -1,0 +1,7 @@
+.subsection
+  %h2
+    = link_to subsection.title, normal_link('komisije_read', {:id => subsection})
+    - admin_subu_section do
+      = link_to "Uredi sekcijo", admin_link('subsections', {:action => 'edit', :id => subsection})
+  
+  %p= "Sekcijo vodi: ", subsection.manager

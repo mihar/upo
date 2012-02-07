@@ -1,0 +1,15 @@
+.resource
+  %h3
+    = resource.title
+    - admin_section do
+      = link_to "Uredi vir", admin_res_path(:action => 'edit', :id => resource, :standalone => @standalone)
+
+  %p.date= resource.created_at.to_s(:long)
+  
+  - unless resource.photo.nil?
+    %p.image= image_tag url_for_file_column(resource.photo, 'fileimage', 'small')
+    
+  %p.summary
+    = resource.summary
+    = link_to_more res_read_path(:id => resource), resource.text, resource.resource_attachments
+  %br.clear

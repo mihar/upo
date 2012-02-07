@@ -1,0 +1,13 @@
+= title @category.title
+
+- if @category.standalone?
+  - @standalone = true
+  - admin_section do
+    = link_to "Dodaj vsebino", admin_res_path(:action => "new", :category_id => @category, :standalone => true)
+  = render :partial => 'resource', :collection => @category.resources
+
+- else
+  - admin_section do
+    = link_to "Dodaj podkategorijo", admin_tecum_resource_categories_path(:action => 'new', :category_id => @category)
+  %ul
+    %li= link_to "Arhiv", cat_archive_path(@category)

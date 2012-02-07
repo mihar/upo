@@ -1,0 +1,14 @@
+
+- @lightbox = true
+
+%h1= @album.title
+
+%p.admin_controls= link_to "Uredi album", :action => "edit_album", :id => params[:id]
+
+
+
+%h2 Fotografije
+%ul.sctAlbumPhotos
+  = render :partial => "photo", :collection => @album.photos
+  
+%p.admin_controls= link_to "Dodaj fotografijo", :action => 'add_photo', :album_id => @album

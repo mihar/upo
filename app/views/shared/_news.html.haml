@@ -1,0 +1,15 @@
+.resource
+  %h3
+    = news.title
+    - admin_section do
+      = link_to "Uredi novico", admin_link('news', {:action => 'edit', :id => news})
+
+  %p.date= news.created_at.to_s(:long)
+  
+  - unless news.photo.nil?
+    %p.image= image_tag url_for_file_column(news.photo, 'fileimage', 'small')
+    
+  %p.summary
+    = news.summary
+    = link_to_more u_news_read_path(news)
+    %br.clear

@@ -1,0 +1,65 @@
+.resource {
+  margin-bottom: 12px;
+  clear: left;
+  border-bottom-width: 3px;
+  border-bottom-style: solid; }
+  .resource p.date {
+    margin: 0 0 10px 0;
+    font-size: 12px;
+    font-weight: bold;
+    color: #666; }
+  .resource p.image {
+    float: left;
+    margin: 0;
+    padding: 0 10px 10px 0; }
+  .resource p.summary {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 5px;
+    font-size: 12px; }
+    .resource p.summary a {
+      padding-left: 10px; }
+
+.resource_read p.image {
+  float: left;
+  margin-right: 20px; }
+  .resource_read p.image a img {
+    border-color: #000; }
+.resource_read p.date, .resource_read p.author {
+  font-size: 12px;
+  font-weight: bold;
+  color: #666;
+  margin: 0 0 10px 0; }
+.resource_read p.author {
+  margin-bottom: 5px;
+  color: #000; }
+
+div.attachments h2 {
+  clear: both; }
+div.attachments p {
+  margin: 0;
+  padding-left: 20px; }
+  div.attachments p a {
+    display: block;
+    margin: 0;
+    margin-left: -22px;
+    padding: 5px;
+    padding-left: 20px;
+    background-repeat: no-repeat;
+    background-position: center left; }
+
+h1.new_attachment .title {
+  display: block;
+  float: left; }
+h1.new_attachment .fileicons {
+  display: block;
+  float: right; }
+
+.cntBody .attachment_admin {
+  background: url(../images/gfx_adminStripe_gray.png);
+  padding: 2.5px 5px;
+  margin: 5px 0;
+  width: 63%; }
+  .cntBody .attachment_admin h4 {
+    margin: 0;
+    padding: 0; }

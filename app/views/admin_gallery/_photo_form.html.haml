@@ -1,0 +1,20 @@
+%p.file
+  %label Fotografija
+  = file_column_field "photo", "filename"
+
+%p
+  %label Podnapis k fotografiji
+  = text_field "photo", "title"
+
+%p
+  %label Avtor fotografije
+  = text_field "photo", "author"
+
+%p.date
+  %label Datum vnosa slike
+  = date_select "photo", "date"
+
+%p
+  %label Opis fotografije
+  = text_area "photo", "description"
+

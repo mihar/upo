@@ -1,0 +1,15 @@
+%h1 Urejanje vira
+
+- form_tag( {:action => 'update', :id => @resource}, {:class => 'nice'} ) do
+  = render :partial => 'form'
+  = nice_submit_tag
+
+%h2 Priponke
+= render :partial => 'admin_resource_attachment/add_attachment_links', :locals => {:segment => 'resource', :id => @resource.id}
+.attachments= render :partial => 'main/attachment', :collection => @resource.resource_attachments, :locals => {:segment => 'resource', :id => @resource.id}
+
+
+%p.admin_controls
+  = link_to "Izbriši vir", admin_res_path(:action => 'destroy', :id => @resource), :confirm => del_conf_msg(@resource.title)
+  |
+  = link_to_back res_read_path @resource

@@ -1,0 +1,23 @@
+
+= error_messages_for 'subsection'
+- @tinymce = true
+
+
+%p
+  %label{ :for => "subsection_title" } Naziv
+  = text_field 'subsection', 'title'
+
+%p
+  %label{ :for => "subsection_manager" } Vodja
+  = text_field 'subsection', 'manager'
+
+%p
+  %label{ :for => "subsection_working_hours" } Delovni čas
+  = text_field 'subsection', 'working_hours'
+
+%p
+  %label{ :for => "subsection_description" } Opis
+  = text_area 'subsection', 'description', :class => 'gui'
+
+
+= segment_id_field 'subsection'

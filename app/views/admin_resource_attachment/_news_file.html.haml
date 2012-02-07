@@ -1,0 +1,12 @@
+- unless resource_attachment.fileimage.nil?
+  .resource_attachment_image
+    = link_to image_tag( url_for_attachment_column(resource_attachment, 'fileimage', 'thumb') ), url_for_attachment_column(resource_attachment, 'fileimage', 'medium'), :rel => 'lightbox'
+    - admin_section do
+      = resource_attachment_admin_links(resource_attachment)
+  
+- unless resource_attachment.filedata.nil?
+  .resource_attachment_attachment
+    = link_to File.basename(resource_attachment.filedata), url_for_attachment_column(resource_attachment, 'filedata'), :class => 'file_download'
+    %span.ext= file_extension( resource_attachment.filedata ).swapcase
+    - admin_section do
+      = resource_attachment_admin_links(resource_attachment)

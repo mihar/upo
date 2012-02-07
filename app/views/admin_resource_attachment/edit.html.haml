@@ -1,0 +1,21 @@
+%h1 Uredi datoteko
+
+- form_tag({:action => 'update', :id => @attachment}, {:multipart => true, :class => 'nice'}) do
+  = error_messages_for 'attachment'
+
+  %p
+    %label{ :for => "attachment_title" } Naslov datoteke
+    = text_field 'attachment', 'title'
+  %p.summary
+    %label{ :for => "attachment_summary" } Opis datoteke
+    = text_area 'attachment', 'summary'
+
+  = render :partial => 'id_fields'
+    
+  = nice_submit_tag
+
+%p.admin_controls
+  = link_to 'Izbriši', admin_link('resource_attachment', {:action => "destroy", :id => @attachment}), :confirm => del_conf_msg(@attachment.title)
+  |
+  = link_to 'Nazaj', admin_back_link
+

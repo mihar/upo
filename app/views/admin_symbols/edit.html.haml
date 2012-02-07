@@ -1,0 +1,16 @@
+%h1 Urejanje simbolike
+
+- form_tag( {:action => 'update', :id => @symbolic}, {:multipart => true, :class => 'nice'} ) do
+  = render :partial => 'form'
+  - unless @symbolic.image.nil?
+    %p
+      %label Obstoječa slika
+      = image_tag url_for_file_column("symbolic", "image", "thumb")
+    
+  = nice_submit_tag
+
+
+%p.admin_controls
+  = link_to "Izbriši simbol", admin_link('symbols', :action => 'destroy', :id => @symbolic), :confirm => del_conf_msg(@symbolic.title)
+  |
+  = link_to_back normal_link('symbols', :id => nil)

@@ -1,0 +1,40 @@
+= error_messages_for 'person'
+
+%p
+  %label{ :for => "person_name" } Ime, naziv
+  = text_field 'person', 'name'
+
+%p
+  %label{ :for => "person_telephone" } Telefon
+  = text_field 'person', 'telephone'
+
+%p
+  %label{ :for => "person_fax" } Faks
+  = text_field 'person', 'fax'
+
+%p
+  %label{ :for => "person_email" } E-pošta
+  = text_field 'person', 'email'
+  
+%p  
+  %label{ :for => "person_function" } Funkcija
+  = text_field 'person', 'function'
+  
+%p
+  %label{ :for => "person_function" } Naslov
+  = text_field 'person', 'address'
+
+%p
+  %label{ :for => "person_function" } Kraj, Pošta
+  = text_field 'person', 'post'
+
+%p.file
+  %label{ :for => "person_image" } Slika
+  = file_column_field "person", "image"
+
+%p
+  %label{ :for => "person_position" } Pozicija osebe
+  = text_field "person", "position"
+
+
+= hidden_field 'person', 'department_id'

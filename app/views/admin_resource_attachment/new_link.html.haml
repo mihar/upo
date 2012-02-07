@@ -1,0 +1,27 @@
+%h1.new_attachment 
+  %span.title Nova povezava
+  %span.fileicons
+    = image_tag 'fileicons/typeicon_link.gif'
+  %br.clear
+
+
+- form_tag({:action => 'create'}, {:class => 'nice'}) do
+  = error_messages_for 'attachment'
+
+  %p
+    %label{ :for => "attachment_title" } Naziv
+    = text_field 'attachment', 'title'
+  %p.summary
+    %label{ :for => "attachment_summary" } Opis povezave
+    = text_area 'attachment', 'summary'
+  %p
+    %label{ :for => "attachment_link" } Povezava (URL)
+    = text_field 'attachment', 'link'
+
+  = render :partial => 'id_fields'
+    
+  = nice_submit_tag
+
+
+= render :partial => 'admin_controls'
+

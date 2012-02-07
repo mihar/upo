@@ -1,0 +1,7 @@
+%h1 Dodajanje podkategorije
+
+- form_tag( {:action => 'create'}, {:class => 'nice'} ) do
+  = render :partial => 'form'
+  = nice_submit_tag
+
+%p.admin_controls= link_to_back admin_tecum_resource_categories_path

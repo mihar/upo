@@ -1,0 +1,9 @@
+%h1 Dodajanje sekcije/komisije
+
+
+- form_tag({:action => 'create'}, {:class => 'nice'}) do
+  = render :partial => 'form'
+  = nice_submit_tag
+
+
+%p.admin_controls= link_to_back normal_link('subsections')

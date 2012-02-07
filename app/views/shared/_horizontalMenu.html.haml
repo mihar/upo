@@ -1,0 +1,5 @@
+%p
+  - if @union
+    = link_to "Pišite nam", contact_mail_link(@union.email_contact, @union.email_contact_copy)
+  |
+  = link_to "E-uprava", "http://e-uprava.gov.si/e-uprava/"

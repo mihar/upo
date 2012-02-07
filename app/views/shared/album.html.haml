@@ -1,0 +1,16 @@
+
+- @page_title = @album.title
+
+%h1.sctAlbumTitle= @album.title
+%p.sctAlbumDatum= @album.date_taken.to_s :long
+
+- unless @album.description.nil?
+  %p.sctAlbumOpis= @album.description
+
+- admin_section do
+  = link_to "Dodaj novo sliko", admin_link('gallery', {:action => 'add_photo', :album_id => @album.id})
+  |
+  = link_to "Uredi obstoječe slike", admin_link('gallery', {:action => 'edit_photos', :id => @album})
+
+%ul#album_photos
+  = render :partial => "shared/photo", :collection => @album.photos

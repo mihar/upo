@@ -1,0 +1,12 @@
+%h1 Dodaj fotografijo
+
+= error_messages_for 'photo'
+
+
+- form_tag({ :action => 'insert_photo', :id => nil }, :multipart => true, :class => 'nice') do
+  = render :partial => 'photo_form'
+  = hidden_field_tag :album_id, @album.id
+
+  = nice_submit_tag
+
+%p.admin_controls= link_to_back normal_link('album', {:id => @album})

@@ -1,0 +1,6 @@
+= title "Področja delovanja"
+- admin_section do
+  = link_to "Uredi dejavnost", admin_link('activities')
+
+- unless @activities.nil?
+  = @activities.activities_formatted

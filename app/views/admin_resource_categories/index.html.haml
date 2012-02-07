@@ -1,0 +1,22 @@
+%h1 Podkategorije
+
+- admin_section do
+  = link_to "Aktiviraj podkategorijo", admin_tecum_resource_categories_path(:action => 'new')
+
+
+%p.dragdrop Strani lahko urejate z vlečenjem.
+
+%ol#categories.sortable
+  - @categories.each do |cat|
+    %li[cat]
+      = cat.title
+      %ol{:id => "cate_#{cat.id}"}
+        = render :partial => 'category', :collection => cat.resource_categories
+        
+      = sortable_element("cate_#{cat.id}", :url => {:action => :update_positions})
+= sortable_element("categories", :url => admin_tecum_categories_path({:action => :update_positions}))
+      
+        
+/ %h2 Nekategorizirane podkategorije
+/ %ul.categories
+/   = render :partial => 'category', :collection => @resource_categories
