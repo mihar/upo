@@ -1,7 +1,7 @@
 set :application, "zdus-zveza.si"
 set :domain, "racker-zdus"
 set :deploy_to, "/webroot/zdus"
-set :repository, 'git@staging:zdus.git'
+set :repository, 'git@github.com:mihar/upo.git'
 set :scm, 'git'
 
 namespace :vlad do
@@ -10,6 +10,8 @@ namespace :vlad do
   remote_task :symlink do
     puts "Linking shared stuff to current release..."
     run "ln -s #{shared_path}/database.yml #{current_release}/config"
+    run "ln -s #{shared_path}/rvmrc #{current_release}/.rvmrc"
+    run "ln -s #{shared_path}/setup_load_paths.rb #{current_release}/config"
   end
 
   remote_task :update do 
