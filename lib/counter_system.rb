@@ -1,5 +1,8 @@
 module CounterSystem
   def count_visit
+    # Ignore them bots.
+    return if request.env["HTTP_USER_AGENT"] =~ /bot/
+
     # If cookie not present, make it and jump right into the incrementation.
     unless cookies[:upo_counter]
       make_cookie
