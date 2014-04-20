@@ -8,6 +8,7 @@ gem 'subdomain-fu'
 
 group :production do
   gem 'rmagick', '2.13.1', :require => 'RMagick'
+  gem 'thin'
 end
 
 group :development do
